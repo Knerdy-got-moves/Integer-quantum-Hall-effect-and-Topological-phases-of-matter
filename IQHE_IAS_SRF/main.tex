@@ -1,0 +1,71 @@
+\documentclass{report}
+\usepackage[utf8]{inputenc}
+\usepackage[left = 3cm, top = 3cm, bottom = 3cm, right = 3cm]{geometry}
+\usepackage{booktabs}
+\usepackage{dsfont}
+\usepackage{amsmath, amssymb}
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}
+\usepackage{braket}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[colorlinks,bookmarks=true,citecolor=blue,linkcolor=red,urlcolor=blue]{hyperref}
+
+
+\usepackage[
+backend=biber,
+style=alphabetic,
+sorting=ynt
+]{biblatex}
+
+\addbibresource{mybibliography.bib}
+
+
+            
+\begin{document}
+\begin{titlepage}
+
+\begin{center}
+    \LARGE \textbf{Summer Research Fellowship programme (SRFP) Report} \\ \quad \\ \LARGE
+    \LARGE \textbf{Indian Academy of Sciences (IAS)} \\ \quad \\ 
+    \LARGE \textbf{on} \\ \quad \\ 
+    \LARGE\textbf{Topological Phases of Matter}\\
+\vspace{1cm}
+	\large By	\\ \textbf{Rishi Paresh Joshi } \\ 2nd year, Int. MSc \\National Institute of Science Education and Research(NISER) \\ Bhubaneswar\\[1cm]
+ \vspace{1cm}
+		 \large Under the supervision of:        \\
+		 \large \textbf{ Dr. Ajit C. Balram,} \\
+        	Institute of Mathematical Sciences, CIT Campus, Chennai, 600113, India \\
+\vspace{1cm}
+31/07/2023
+\end{center}
+\begin{figure}
+\centering
+\includegraphics[scale=1]{imsclogo_trilingual_600_new.eps}
+\end{figure}
+
+\end{titlepage}
+
+
+
+\newpage
+\section*{Acknowledgements}
+\par I would like to express my sincere gratitude towards my guide, Dr. Ajit C. Balram, for his guidance and expertise throughout the program, which has been invaluable in enhancing my understanding of this fascinating field. This experience has enriched my knowledge and strengthened my passion for research. I thank the Indian Academy of Sciences for this incredible opportunity to explore and learn. Lastly, I would like to thank Rakesh Kumar Dora, Koyena Bose, and Sashikanta Mohapatra, Ph.D. students working with Ajit, for helping me understand the basics of the field.
+\newpage
+\section{Abstract}
+Condensed matter physics deals with phases of matter that exhibit phenomena like superconductivity and quantization of resistivity~\cite{MM}. A phase is a particular organization of particles whose properties are determined by the collective behavior of all the particles in the system. A phase transition occurs when the parameters of the system are changed. Traditionally, phase changes are associated with Landau's theory of symmetry-breaking. However, experiments like the Quantum Hall Effect (QHE) revealed the existence of topological phases where phase transitions occur without symmetry-breaking. In a topological phase, specific properties, such as the Hall conductance or the number of edge modes (equal to Chern number) in a QH system, are independent of material details and insensitive to smooth deformation of the system (such as small density change or disorders) unless the system passes through a quantum phase transition~\cite{J.Moore}. The system's external deformations are considered gentle enough – namely "adiabatic" as long as they are sufficiently smaller than the gap so as not to create excitation above the ground state~\cite{J.Moore}. This report discusses the classical Hall effect, its quantum version, and some of the basics required to understand these.
+\newpage
+\section{Introduction}
+A significant discovery in the 1980s was that electrons, when confined to two dimensions and subject to a strong magnetic field, show a  topological phase that underlies the quantum Hall effect~\cite{J.Moore}. This effect was noticed in the late 1900s as it was impossible to generate low temperatures and high magnetic fields (classically, scattering of electrons rendered the mean free path to decrease, and low   magnetic field increased the radius of the orbit.) Additionally, quantization of resistivity was only first observed in 2DES because, in three dimensions (3D), the Landau levels spread out in energy along the direction of the magnetic field. As a result, no matter where the Fermi energy lies, the Landau levels fill the energy gap and destroy the Hall-resistance plateaus. However, viewing IQHE from the perspective of the Haldane model and the SSH model describing the electric conductivity of polyacetylene gave rise to a new concept of Topological Insulators, which could also be found in 3D~\cite{SSH}~\cite{Haldane}. Before explaining the phenomena of QHE, one can look at the phase at room temperature and low magnetic field through the classical picture involving the Drude model. The various prerequisites required to understand the Quantum phenomena and the basics for other topological phases are covered in this report.
+\tableofcontents
+\newpage
+\include{Perturbation Theory}
+\include{Identical Particles}
+\include{Adiabatic theorem, Berry Phase, and Berry connection}
+\include{Bloch theorem}
+\include{Tight Binding Model}
+\include{Classical Hall Effect}
+\include{Landau levels}
+\include{Integer Quantum Hall Effect}
+\medskip
+\printbibliography
+\end{document}

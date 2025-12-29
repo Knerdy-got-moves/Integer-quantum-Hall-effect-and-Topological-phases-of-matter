@@ -1,0 +1,211 @@
+\chapter{Landau levels} 
+Planck constant, $\hbar$ in the formula for $R_H$ indicates the inherently quantum mechanical nature of the effect. This chapter studies a single electron confined to two dimensions and exposed to a magnetic field. This problem was solved exactly soon after the invention of quantum mechanics because it is merely a one-dimensional simple harmonic oscillator problem in disguise. The most remarkable aspect of the solution is that the electron kinetic energy is quantized. The discrete kinetic energy levels are called "Landau levels\cite{JK.Jain}."
+The Landau level is the workhorse of the quantum Hall problem. The integral quantum Hall effect directly results from the Landau level formation.
+
+\section{Construction of the Hamiltonian}\cite{JK.Jain}
+The Hamiltonian for a non-relativistic electron moving in two dimensions in a perpendicular magnetic field is given by the Legendre transform of the Lagrangian ($L=(mv^2)/2+(e/c)vA$).
+\begin{equation}
+H=\frac{1}{2 m_{\mathrm{b}}}\left(\boldsymbol{p}+\frac{e \boldsymbol{A}}{c}\right)^{2}     
+\end{equation}
+Where $m_b$ is the effective mass, $c$ is the speed of light, $e$ is the charge of an electron, and $\boldsymbol{p}$ is the canonical momentum operator.
+As we can see, the choice of the magnetic vector potential $\boldsymbol{A}$ is not unique.
+To solve this problem, we have to consider a specific potential $\boldsymbol{A}$ that satisfies:-
+\begin{equation}
+    B \hat{z}=\nabla \times \boldsymbol{A}  
+\end{equation}
+In the following sections, we consider different gauges in the planar geometry. We know that the Schrodinger equation remains 
+\section{Landau gauge}
+For the Landau gauge,
+\begin{equation}
+ \boldsymbol{A}=B(-y, 0,0)   
+\end{equation}
+the Hamiltonian contains no $x$, and therefore commutes with $p_{x}$. The convenient unit of length is the magnetic length, defined as
+\begin{equation}
+\ell=\sqrt{\frac{\hbar c}{e B}}    
+\end{equation}
+In terms of dimensionless quantities
+
+\begin{eqnarray}
+y^{\prime}&=&\frac{y}{\ell}-\ell k_{x} \\
+H&=&\hbar \omega_{\mathrm{c}}\left[\frac{1}{2} y^{\prime 2}+\frac{1}{2}\left(p_{y}^{\prime}\right)^{2}\right]
+\end{eqnarray}
+
+
+which is the Hamiltonian of a one-dimensional harmonic oscillator. The energy eigenvalues are quantized at
+\begin{equation}
+E_{n}=\left(n+\frac{1}{2}\right) \hbar \omega_{\mathrm{c}}    
+\end{equation}
+with $n=0,1, \ldots$, called Landau levels.  The continuous energy levels of the zero magnetic field thus combine to produce degenerate Landau levels. The associated eigenvectors are
+\begin{equation}
+\label{Eigenfunction of landau gauge}
+\eta_{n, k_{x}}(\boldsymbol{r}){=}\left[\pi 2^{2 n}(n !)^{2}\right]^{{-}1 / 4} \mathrm{e}^{\mathrm{i} k_{x} x} \exp \left[{-}\frac{1}{2}\left(\frac{y}{\ell}{-}\ell k_{x}\right)^{2}\right] H_{n}\left(\frac{y}{\ell}{-}\ell k_{x}\right)
+\end{equation}
+where $H_{n}$ are Hermite polynomials.
+
+We refer to the $n=0$ Landau level as the lowest Landau level, the $n=1$ Landau level as the second Landau level, and so on.
+\begin{figure}[!h]
+    \centering
+    \includegraphics[scale = 0.45]{Density of states and Landau levels.pdf }
+    \caption{The Fermi sea splits into equally spaced, degenerate Landau levels upon applying a magnetic field \cite{JK.Jain}}
+    \label{ }
+\end{figure}
+Two points are worth noting:
+\begin{itemize}
+    \item The energy does not depend on $k_{x}$. The eigenstates with different $k_{x}$ in a given Landau level are degenerate.
+    \item The $y$ position depends on $k_{x}$. An eigenfunction is Gaussian-localized in a narrow strip of width $\sim \ell$ centered at $y=k_{x} \ell^{2}$.
+\end{itemize}
+\section{Symmetric gauge}
+
+The symmetric gauge refers to the choice:-
+\begin{equation}
+\boldsymbol{A}=\frac{\boldsymbol{B} \times \boldsymbol{r}}{2}=\frac{B}{2}(-y, x, 0)    
+\end{equation}
+In terms of dimensionless lengths and energies, the Hamiltonian can be expressed as
+\begin{equation}
+H=\frac{1}{2}\left[\left(-\mathrm{i} \frac{\partial}{\partial x}-\frac{y}{2}\right)^{2}+\left(-\mathrm{i} \frac{\partial}{\partial y}+\frac{x}{2}\right)^{2}\right]   
+\end{equation}
+For notational convenience, we use the same notation for dimensionless $x, y$, and $H$; the correct units can be restored by introducing factors of $\ell$ and $\hbar \omega_{\mathrm{c}}$. We next transform to new variables $z$ and $\bar{z}$
+\begin{equation}
+z=x-\mathrm{i} y=r \mathrm{e}^{-\mathrm{i} \theta}
+\end{equation}
+and
+\begin{equation}
+\bar{z}=x+\mathrm{i} y=r \mathrm{e}^{\mathrm{i} \theta}     
+\end{equation}
+
+
+The reason for the unconventional choice (as opposed to $z=x+\mathrm{i} y$ ), as we see below, is that the lowest Landau level (LLL) wave functions involve only $z$ 's, and not $\bar{z}$ 's, apart from a Gaussian factor. The above definition will save us from writing everywhere $\bar{z}$ 's later on. The derivatives are related as:
+\begin{equation}
+\frac{\partial}{\partial x}=\frac{\partial}{\partial z}+\frac{\partial}{\partial \bar{z}}    
+\end{equation}
+and
+\begin{equation}
+\frac{\partial}{\partial y}=-\mathrm{i}\left(\frac{\partial}{\partial z}-\frac{\partial}{\partial \bar{z}}\right)    
+\end{equation}
+With $z$ and $\bar{z}$ as independent variables, the Hamiltonian becomes:
+\begin{equation}
+H=\frac{1}{2}\left[-4 \frac{\partial^{2}}{\partial z \partial \bar{z}}+\frac{1}{4} z \bar{z}-z \frac{\partial}{\partial z}+\bar{z} \frac{\partial}{\partial \bar{z}}\right]    
+\end{equation}
+We define the following sets of ladder operators:
+\begin{eqnarray}
+b & =\frac{1}{\sqrt{2}}\left(\frac{\bar{z}}{2}+2 \frac{\partial}{\partial z}\right), \\
+b^{\dagger} & =\frac{1}{\sqrt{2}}\left(\frac{z}{2}-2 \frac{\partial}{\partial \bar{z}}\right)\label{B dagger}, \\
+a^{\dagger} & =\frac{1}{\sqrt{2}}\left(\frac{\bar{z}}{2}-2 \frac{\partial}{\partial z}\right), \\
+a & =\frac{1}{\sqrt{2}}\left(\frac{z}{2}+2 \frac{\partial}{\partial \bar{z}}\right),    
+\end{eqnarray}
+which have the property that,
+\begin{equation}
+\left[a, a^{\dagger}\right]=1, \quad\left[b, b^{\dagger}\right]=1    \end{equation}
+and all other commutators are zero. In terms of these operators, the Hamiltonian can be written as:-
+\begin{equation}
+H=a^{\dagger} a+\frac{1}{2} .    
+\end{equation}
+The Landau Level (LL) index $n$ is the eigenvalue of $a^{\dagger} a$. The $z$ component of the angular momentum operator is defined as:-
+\begin{eqnarray}
+ L & =-\mathrm{i} \hbar \frac{\partial}{\partial \theta} \\
+& =-\hbar\left(z \frac{\partial}{\partial z}-\bar{z} \frac{\partial}{\partial \bar{z}}\right) \\
+& =-\hbar\left(b^{\dagger} b-a^{\dagger} a\right) .   
+\end{eqnarray}
+(In the disk geometry, only the $z$ component of the angular momentum is relevant, so we have suppressed the subscript of $L_{z}$.) Exploiting the property $[H, L]=0$, the eigenfunctions are chosen to diagonalize $H$ and $L$ simultaneously. The eigenvalue of $L$ is denoted by $-m \hbar$; with this definition the quantum number $m$ takes values:-
+$$
+m=-n,-n+1, \ldots, 0,1, \ldots
+$$
+in the $n$th Landau level (LL). The application of $b^{\dagger}$ increases $m$ by one unit while preserving $n$, whereas $a^{\dagger}$ simultaneously increases $n$ and decreases $m$ by one unit. The analogy to the harmonic oscillator problem immediately gives the solution
+
+\begin{eqnarray}
+H|n, m\rangle & =E_{n}|n, m\rangle, \\
+E_{n} & =\left(n+\frac{1}{2}\right), \\
+|n, m\rangle & =\frac{\left(b^{\dagger}\right)^{m+n}}{\sqrt{(m+n) !}} \frac{\left(a^{\dagger}\right)^{n}}{\sqrt{n !}}|0,0\rangle,
+\end{eqnarray}
+$m=-n,-n+1, \ldots$ is the angular momentum quantum number defined above. The single particle orbital at the bottom of the two ladders defined by the two sets of raising and lowering operators is,
+\begin{equation}
+\label{Ground state landau level}
+\langle\boldsymbol{r} \mid 0,0\rangle \equiv \eta_{0,0}(\boldsymbol{r})=\frac{1}{\sqrt{2 \pi}} \mathrm{e}^{-\frac{1}{4} z \bar{z}}    
+\end{equation}
+which satisfies:-
+\begin{equation}
+a|0,0\rangle=b|0,0\rangle=0 .    
+\end{equation}
+The single-particle states are straightforward in the lowest Landau level $(n=0)$ :
+
+$$
+\eta_{0, m}=\langle\boldsymbol{r} \mid 0, m\rangle=\frac{\left(b^{\dagger}\right)^{m}}{\sqrt{m !}} \eta_{0,0}=\frac{z^{m} \mathrm{e}^{-\frac{1}{4} z \bar{z}}}{\sqrt{2 \pi 2^{m} m !}},
+$$
+
+Where we have used Eq.~\eqref{B dagger}and ~\eqref{Ground state landau level}. Aside from the ubiquitous Gaussian factor, a general state in the lowest Landau level is given by a polynomial of $z$. It does not involve any $\bar{z}$. In other words, apart from the Gaussian factor, the lowest Landau level wave functions are analytic functions of $z .$
+
+The eigenfunction for a general $n$ and $m$ is given by:-
+\begin{equation}
+ \eta_{n, m}(\boldsymbol{r}) =\langle\boldsymbol{r} \mid n, m\rangle    
+\end{equation}
+Which is:-
+\begin{equation}
+\eta_{n, m}(\boldsymbol{r}) =\frac{1}{\sqrt{2 \pi 2^{m+2 n} n !(m+n) !}}\left(\frac{\bar{z}}{2}-2 \frac{\partial}{\partial z}\right)^{n}\left(\frac{z}{2}-2 \frac{\partial}{\partial \bar{z}}\right)^{m+n} \mathrm{e}^{-\frac{z \bar{z}}{4}} .
+\end{equation}
+This can be expressed in terms of standard functions by writing $\mathrm{e}^{-z \bar{z} / 4}=\mathrm{e}^{z \bar{z} / 4} \mathrm{e}^{-z \bar{z} / 2}$, and noting that:-
+\begin{equation}
+\mathrm{e}^{-\frac{1}{4} z \bar{z}}\left(\frac{\bar{z}}{2}-2 \frac{\partial}{\partial z}\right)^{n}\left(\frac{z}{2}-2 \frac{\partial}{\partial \bar{z}}\right)^{m+n} \mathrm{e}^{\frac{1}{4} z \bar{z}}=\left(-2 \frac{\partial}{\partial z}\right)^{n}\left(-2 \frac{\partial}{\partial \bar{z}}\right)^{m+n}    
+\end{equation}
+Which gives:-
+\begin{equation}
+\eta_{n, m}(\boldsymbol{r})=\frac{1}{\sqrt{2 \pi 2^{m+2 n} n !(m+n) !}} \mathrm{e}^{\frac{z \bar{z}}{4}}\left(-2 \frac{\partial}{\partial z}\right)^{n}\left(-2 \frac{\partial}{\partial \bar{z}}\right)^{m+n} \mathrm{e}^{-\frac{z \bar{z}}{2}} .    
+\end{equation}
+The derivative $-2 \partial / \partial \bar{z}$ acting on the Gaussian produces a factor of $z$. Inserting appropriate powers of $\bar{z}$ allows us to write:-
+\begin{eqnarray}
+\eta_{n, m}(\boldsymbol{r}) & =\frac{1}{\sqrt{2 \pi 2^{m+2 n} n !(m+n) !}}(-1)^{n} 2^{m+n} \\
+& \times \bar{z}^{-m} \mathrm{e}^{\frac{z \bar{z}}{4}}\left(\frac{\partial}{\partial \frac{\bar{z} z}{2}}\right)^{n}\left(\frac{\bar{z} z}{2}\right)^{m+n} \mathrm{e}^{-\frac{z \bar{z}}{2}}    
+\end{eqnarray}
+Defining $t=z \bar{z} / 2=r^{2} / 2$, and using the Rodrigues definition of the associated Laguerre polynomial,
+\begin{equation}
+L_{n}^{\alpha}(t)=\frac{1}{n !} \mathrm{e}^{t} t^{-\alpha} \frac{\mathrm{d}^{n}}{\mathrm{~d} t^{n}}\left(\mathrm{e}^{-t} t^{n+\alpha}\right)    
+\end{equation}
+yields
+\begin{equation}
+\eta_{n, m}(\boldsymbol{r})=\frac{(-1)^{n}}{\sqrt{2 \pi}} \sqrt{\frac{n !}{2^{m}(m+n) !}} \mathrm{e}^{-\frac{r^{2}}{4}} z^{m} L_{n}^{m}\left(\frac{r^{2}}{2}\right)    
+\end{equation}.
+\section{Degeneracy}
+
+Each Landau level has degenerate orbitals labeled by the quantum numbers $k_{x}$ and $m$ in the Landau and symmetric gauges. The degeneracy per unit area is the same in each Landau level but depends on the magnetic field.
+
+In the Landau gauge, the orbital labeled by $k_{x}$ is localized at $y=k_{x} \ell^{2}$. To facilitate the counting of states, we take a sample of length $L_{x}$ along the $x$-direction and impose periodic boundary conditions in the $x$ direction (See figure below):
+\begin{figure}[!h]
+    \centering
+    \includegraphics[scale = 0.55]{Single particle orbitals in Landau gauge.pdf}
+    \caption{Single particle orbitals in the Landau gauge on a strip of width $L_{x}$. Periodic boundary conditions are assumed in the $x$ direction (giving the topology of a cylinder). The lines trace the maximum probability for orbitals with different wave vectors $k_{x}$; the $y$ location is related to $k_{x}$. }
+    \label{pic1.2}
+\end{figure}
+\begin{equation}
+\mathrm{e}^{\mathrm{i} k_{x}\left(x+L_{x}\right)}=\mathrm{e}^{\mathrm{i} k_{x} x}    
+\end{equation}
+The allowed values of $k_{x}$, then, are;-
+\begin{equation}
+k_{x}=2 \pi \frac{n_{x}}{L_{x}}    
+\end{equation}
+
+We now count the number of states in a given area, say the region of area $L_{x} L_{y}$ defined by $y=0$ and $y=L_{y}$. (The sample itself extends infinitely in the $y$-direction. We do not wish to complicate the issue with real edges here.) The state at $y=0$ is labeled by $n_{x}=0$ and the one at $y=L_{y}$ by wave vector $k_{x}=L_{y} / \ell^{2}$, or by the integer
+\begin{equation}
+ N_{x}=\frac{L_{x} L_{y}}{2 \pi \ell^{2}} .   
+\end{equation}
+Neglecting $O(1)$ effects, $N_{x}$ is the number of states in the area $L_{x} L_{y}$, yielding for the degeneracy per unit area:
+\begin{equation}
+G=\frac{1}{2 \pi \ell^{2}}=\frac{B}{\phi_{0}} .
+\end{equation}
+The last term tells us that each Landau level has precisely one state per flux quantum $\left(\phi_{0}=h c / e\right)$.
+
+The  LL degeneracy can also be obtained readily in the symmetric gauge. Consider a disk of radius $R$ centered at the origin, and ask how many states lie inside it in a given Landau level. Taking, for simplicity, the lowest Landau level, the eigenstate $|0, m\rangle$, has its weight located at the circle of radius $r=\sqrt{2 m} \cdot \ell$. Thus the largest value of $m$ for which the state falls inside the disk is given by $m=R^{2} / 2 \ell^{2}$, which is also the total number of eigenstates in the lowest Landau level that fall inside the disk (ignoring order one corrections). Thus, the degeneracy per unit area is $\left(2 \pi l^{2}\right)^{-1}=e B / h c$. Of course, the degeneracy is the same everywhere; we could, for example, have counted all states from $R_{1}$ to $R_{2}$.
+
+In the symmetric gauge, the eigenstates are localized along a circle. This circle should not be confused with the cyclotron orbit of classical physics. The energy does not depend on the radius (in the lowest Landau level). The electron makes tiny cyclotron orbits of radius $\sim \ell$, and the whole object moves slowly in a larger circle. The energy depends only on the small orbits. Of course, the shape of the single particle eigenstates is gauge dependent. Other bases can be constructed with different shapes.
+
+In the presence of disorder, the degeneracy of the states in a Landau level is lifted, the density of states is broadened, and a Landau band is produced. The belief is that there are localized states in the tails and extended states at the center of each Landau level. This is discussed further in the Chapter on the Integer Quantum Hall effect.
+
+\section{Filling factor}
+
+The filling factor is defined by
+\begin{equation}
+\nu=\frac{\rho}{G}=2 \pi l^{2} \rho=\frac{\rho}{B / \phi_{0}},    
+\end{equation}
+where $\rho$ is the $2 \mathrm{D}$ density of electrons. The filling factor equals the number of electrons per flux quantum penetrating the sample. This quantity plays a crucial role in the Quantum Hall Effect(QHE) physics.
+
+The quantity $v$ is the filling factor because it equals the number of occupied Landau levels for non-interacting electrons at a given magnetic field. Interactions and disorder cause some LL mixing; higher LL states are occupied with a nonzero probability even for $v<1$.
+
+The filling factor is inversely proportional to the magnetic field. As the magnetic field increases, each Landau level can accommodate more and more electrons, and, as a result, fewer and fewer Landau levels are occupied. 

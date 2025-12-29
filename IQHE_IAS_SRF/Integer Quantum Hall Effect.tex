@@ -1,0 +1,227 @@
+\chapter{Integer Quantum Hall effect}
+\section{Introduction}
+This chapter is broadly on one type of Hall effect known as the Integer Quantum Hall Effect (IQHE). The phenomenon of IQHE will mainly be understood using the tools established in the last chapter.
+In IQHE, the Hall resistivity takes on a constant value over a wide range of magnetic fields before jumping to a new constant value.
+\begin{figure}[!h]
+    \centering
+    \includegraphics[scale = 0.45]{Intro to IQHE.pdf }
+    \caption{Resistivities $\left(\rho_{x x}, \rho_{y y}\right)$ as a function of magnetic field for two-dimensional electron system~\cite{Klitzing}.}
+    \label{QHE Experimental data}
+\end{figure}
+\begin{equation}
+\rho_{x y}=\frac{2 \pi \hbar}{e^{2}} \frac{1}{\nu}     
+\end{equation}
+Where $ \nu \in \mathbb{Z}^{+}$.
+If we compare it with the classical result where
+\begin{equation}
+\rho_{\text {classical }, x y}=\frac{B}{n e}    
+\end{equation}
+we see that
+\begin{equation}
+B=\frac{n}{\nu} \phi_{0}    
+\end{equation}
+An early guess could be that for a given density of electrons, this gives the magnetic field required to get the resistivity corresponding to $\nu$. However, this resistivity value remains at $\nu^{\text {th }}$ plateau for a range of $B$ before jumping to the next plateau. During which $\rho_{x x}$ mostly remains zero, spiking near the jump ~\ref{QHE Experimental data}. To understand this phenomenon, we will now use quantum mechanics.
+
+\section{Landau levels in the presence of electric field}
+
+Let us consider our earlier system used for quantum mechanical treatment (1.12), but with an added longitudinal electric field $(E \hat{x})$. This is a potential $V(x)=-E x$. The resulting Hamiltonian of this system is
+\begin{equation}
+\label{Hamiltonian of IQHE}
+H=\frac{1}{2 m}\left(p_{x}^{2}+\left(p_{y}+e B x\right)^{2}\right)+e E x    
+\end{equation}
+As the system is translationally invariant in the $y$-direction, we can use the previously used ansatz,
+\begin{equation}
+\psi_{k}(x, y)=e^{i k y} \phi(x)    
+\end{equation}
+where the plane waves are eigenstates of $p_{y}$ with eigenvalues $\hbar k$. Working in the subspace of momentum eigenstates,
+\begin{equation}
+H=\frac{p_{x}^{2}}{2 m}+\frac{1}{2} m \omega_{B}^{2}\left(x+k l_{B}^{2}+\frac{m E}{e B^{2}}\right)^{2}-e E\left(k l_{B}^{2}+\frac{e E}{m \omega_{B}^{2}}\right)+\frac{m}{2} \frac{E^{2}}{B^{2}}    
+\end{equation}
+We can see that the first two terms are the same as the Hamiltonian of a displaced harmonic oscillator with its center at $-k l_{B}^{2}-\frac{m E}{e B^{2}}$. Therefore, this wavefunction is related to the wavefunction of the Landau gauge by a shifted center.
+\begin{equation}
+\psi_{n, k}^{\prime}(x, y)=\psi_{n, k}\left(x+m E / e B^{2}, y\right)    \end{equation}
+and the corresponding energy is given by
+\begin{equation}
+\label{Energy level of IQHE}
+E_{n, k}=\hbar \omega_{B}\left(n+\frac{1}{2}\right)-e E\left(k l_{B}^{2}+\frac{e E}{m \omega_{B}^{2}}\right)+\frac{m}{2} \frac{E^{2}}{B^{2}}    
+\end{equation}
+\begin{figure}[!h]
+    \centering
+    \includegraphics[scale = 0.45]{Landau levels IQHE.pdf}
+    \caption{Energy of n,k state from Eq.~\eqref{Energy level of IQHE} is compared with Density of states without electric field}
+\end{figure}
+
+In contrast to the last result, the energy now depends on $k$ and $n$. Therefore, the degeneracy is now lifted with the introduction of an electric field. Now that energy depends on momentum $p_{y}$, the group velocity of this system is
+\begin{equation}
+v_{y}=\frac{1}{\hbar} \frac{\partial E_{n, k}}{\partial k}=-\frac{E}{B}    
+\end{equation}
+This result is in accordance with what we would expect from classical electrodynamics, the drifting of cyclotron orbit in the presence of an electric field perpendicular to the magnetic field. The direction of drift is along $\mathbf{E} \times \mathbf{B}$.
+
+\section{The edge effect}
+
+The central aspect of the Hall effect, whether classical or quantum, is the occurrence of a transverse voltage in the presence of a longitudinal current and perpendicular magnetic field. Another aspect that must be considered is the presence of edges in actual samples provide a steep potential to the motion of electrons near the end of the sample. A dummy potential is produced by combining the confinement potential due to edges and the external potential (Figure below).
+\begin{figure}[!h]
+    \centering
+    \includegraphics[scale = 0.45]{Confinement potential and external potentials.pdf}
+    \caption{Confinement potential $+$ External potential}
+    \label{3}
+\end{figure}
+The corresponding Hamiltonian is
+\begin{equation}
+H=\frac{1}{2 m}\left(p_{x}^{2}+\left(p_{y+e B x}\right)^{2}\right)+V(x)    
+\end{equation}
+In the absence of any potential, the wave functions are the same as those of the Landau gauge Eq.~\eqref{Eigenfunction of landau gauge}, which is Gaussian with centers at $X=-k l_{B}^{2}$. Let us consider the potential is smooth over the characteristic length scale $l_{B}$. Then, the potential can be Taylor expanded around X.
+\begin{equation}
+V(x)=V(X)+\left.\frac{\partial V}{\partial x}\right|_{x=X}(x-X)+\ldots    
+\end{equation}
+After ignoring $2^{\text {nd }}$ and higher order terms and removing the constant term as it will not affect our Hamiltonian, the potential has the form.
+\begin{equation}
+V(x)=\left.\frac{\partial V}{\partial x}\right|_{x=X}(x-X)    
+\end{equation}
+Therefore, the Hamiltonian looks like
+\begin{equation}
+H=\frac{1}{2 m}\left(p_{x}^{2}+\left(p_{y+e B x}\right)^{2}\right)+\left.\frac{\partial V}{\partial x}\right|_{x=X}(x-X)    
+\end{equation}
+This has the same form as the Hamiltonian for Landau levels in an electric field (Eq.~\eqref{Hamiltonian of IQHE}). Therefore, each wave function labelled by $k$ has a different center at $X=-k l_{B}^{2}-\frac{m e}{e B^{2}}$ with different drift velocity given by
+\begin{equation}
+v_{y}=-\frac{1}{e B} \frac{\partial V}{\partial x}    
+\end{equation}
+Looking at (Figure \ref{3} ), we can see that $v_{y}>0$ on the left and $v_{y}<0$ on the right. Therefore, the state's motion on each edge is opposite along a single direction, known as chiral motion. While the velocity in bulk is zero due to flat $V(x)$, the edge modes are primarily responsible for transport.
+
+\section{Classical prediction}
+
+This is also expected from a classical treatment. In a magnetic field, the electrons move in cyclotron orbits. According to our convention, the magnetic field is perpendicular to the plane outward. So, the orbits well inside the sample will be anti-clockwise. However, the orbits or modes near the edge will face a hard-wall potential. To avoid collision with the edge and continue the anti-clockwise motion, it will perform a half-orbit motion along the length of the edge.
+\begin{figure}[!h]
+    \centering
+    \includegraphics[scale = 0.45]{Edge states.pdf }
+    \caption{Edge States }
+    \label{pic4}
+\end{figure}
+The particle has opposite chirality on the two sides of the sample. On a macroscopic scale, local currents start flowing along the edge of the sample in opposite directions, as predicted by quantum mechanics. Due to opposite chirality along the two edges, the net current in the sample as a whole is zero.
+
+\section{Consequences of edge effect}
+
+The Fermi energy of the system is denoted by $E_{F}$. All the $k$ states with energy below the Fermi level are occupied for a Landau level. As the $k$ states have centers at $X=-k l_{B}^{2}-\frac{m e}{e B^{2}}$, we can denote the filled states by filled blue dots along $x$-axis.
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[scale = 0.45]{Filled states in Landau level.pdf}
+    \caption{Filled states in a Landau level}
+    \label{5}
+\end{figure}
+To find the predicted resistivity, the current along the direction of Hall voltage must be computed (the $y$-axis in our case). The particle density is:- 
+\begin{equation}
+ \sigma(r)=\sum_{i} \delta^{2}\left(r-r_{i}\right),  
+\end{equation}
+The current density is defined as
+\begin{equation}
+\mathbf{K}(r)=-e \sigma(r) \mathbf{v}(r)    
+\end{equation}
+The current in $y$ direction is given by
+\begin{eqnarray}
+I_{y} & =\int K_{y}(r) d x \\
+& =\frac{-e}{L} \sum_{i} \int \delta^{2}\left(r-r_{i}\right) v_{y}(r) d x \\
+& =\frac{-e}{L} \sum_{i} v_{y}\left(r_{i}\right)
+\end{eqnarray}
+We know that each distinct $k$ state labels each particle. Therefore, the summation can be carried out over $k$.
+\begin{eqnarray}
+    I_{y} & =\frac{-e}{L} \sum_{k} v_{y}(k) \\
+& \approx \frac{-e}{L} \frac{L}{2 \pi} \int v_{y}(k) d k
+\end{eqnarray}
+Switching the integral variable using $x=-k l_{B}^{2}$ and carrying out the integral from one edge to other another (a to b)
+\begin{eqnarray}
+    I_{y} & =\frac{e}{2 \pi l_{B}^{2}} \int_{a}^{b} \frac{1}{e B} \frac{\partial V}{\partial x} d x \\
+& =\frac{e}{2 \pi \hbar}[V(b)-V(a)]
+\end{eqnarray}
+The Hall potential in terms of potential energy along x direction is given by
+\begin{equation}
+e V_{H}=V(b)-V(a)    
+\end{equation}
+\begin{figure}[!h]
+    \centering
+    \includegraphics[scale = 0.45]{2-filled landau levels.pdf }
+    \caption{$\nu$ filled Landau levels }
+    \label{6}
+\end{figure}
+So when $\nu$ Landau levels are fully filled, the current gets multiplied likewise (as it is a sum over states). Then, the total current along the $y$-axis is
+\begin{equation}
+I_{y=} \frac{\nu e^{2}}{2 \pi \hbar} V_{H}
+\end{equation}
+The Hall resistivity is given by
+\begin{equation}
+\rho_{x y}=\frac{V_{x}}{I_{y}}=\frac{2 \pi \hbar}{e^{2}} \frac{1}{\nu}    
+\end{equation}
+which matches the resistivity obtained from experiments (Figure \ref{QHE Experimental data}).
+
+We can draw a few conclusions from this treatment. 
+\begin{enumerate}
+\item Since the potential is mostly flat in the interior region, most of the current is carried by edge states (2.8). 
+\item The results are independent of the shape of the potential in the interior region of (Figure 2.3). We will get the same results if the potential is smooth over length $l_{B}$. 
+\item The chiral modes are very robust. Usually, the addition of impurities can affect the chirality; however, in this case, the particles have to travel the entire sample to flip its chirality, and as they can only move in one direction, they are well immune to scattering due to impurities.
+\end{enumerate}
+
+However, there remains an unanswered question. Why is the quantized resistivity constant over a range of $\mathrm{B}$? When $\mathrm{B}$ is increased, the number of states in each Landau level falls. Therefore, the electrons should go to the next Landau level (for constant electron density in a sample). In the next section, we will try to understand this.
+
+\section{Effect of disorder}
+
+The samples used for experiments inherently have some impurities, even with the best efforts to make them clean. We will see that this aspect, mostly ignored in explaining most phenomena in physics, will play the most pivotal role. In the last section, we discussed how introducing a slight variation in the shape of $V(x)$ will not affect the current value. We will consider the disorders to be perturbative corrections over the Hamiltonian. Thus,
+\begin{equation}
+V_{d i s}<<\hbar \omega_{B} ,  
+\end{equation}
+$V_{d i s}$ is the disorder potential.
+Therefore, the new Hamiltonian is
+\begin{equation}
+H=H_{0}+V_{d i s}    
+\end{equation}
+Let us consider how this affects the cyclotron orbits inside the sample. The center of each orbit can be given by
+\begin{eqnarray}
+& X=x(t)+R \sin \left(w_{B} t+\phi\right)=x-\frac{\dot{y}}{\omega_{B}}=x-\frac{\pi_{y}}{m \omega_{B}} \\
+& Y=y(t)-R \sin \left(w_{B} t+\phi\right)=y+\frac{\dot{x}}{\omega_{B}}=y+\frac{\pi_{x}}{m \omega_{B}}
+\end{eqnarray}
+The time evolution of the center of orbit in the presence of only a magnetic field (no electric field) is
+\begin{equation}
+i \hbar \dot{X}=\left[X, H_{0}\right]=0 \quad i \hbar \dot{Y}=\left[Y, H_{0}\right]=0 \quad[X, Y]=i l_{B}^{2}    
+\end{equation}
+After considering the disorder:-
+\begin{eqnarray}
+i \hbar \dot{X} & =\left[X, H_{0}+V_{d i s}\right] \\
+& =\left[X, V_{d i s}\right] \\
+& =[X, Y] \frac{\partial V}{\partial Y} \\
+& =i l_{B}^{2} \frac{\partial V}{\partial Y} \\
+i \hbar \dot{X} & =\left[Y, H_{0}+V_{d i s}\right] \\
+& =\left[Y, V_{d i s}\right] \\
+& =[Y, X] \frac{\partial V}{\partial X} \\
+& =-i l_{B}^{2} \frac{\partial V}{\partial X}
+\end{eqnarray}
+Therefore, now the center of the orbits has a drifting velocity.
+\begin{equation}
+v=\frac{l_{B}^{2}}{\hbar}\left(-\frac{\partial V}{\partial X} \hat{i}+\frac{l_{B}^{2}}{\hbar} \frac{\partial V}{\partial Y} \hat{j}\right)    
+\end{equation}
+We can see that the drifting velocity is perpendicular to $\nabla V_{\text {dis }}$. Therefore, the center of the orbit drifts along an equipotential. The disorder potential traps the particle into a closed contour where the direction of drift depends on whether the potential is attractive or repulsive in that region.
+
+\section{Understanding the physical effect}
+
+We can imagine the disorder's potential to be comprised of peaks (maxima) and troughs (minima) distributed randomly across the sample. Initially, the wave function extended over the entire two-dimensional space in the system without any disorder. These were known as the extended states.
+\begin{figure}[!h]
+    \centering
+    \includegraphics[scale = 0.45]{Localised states.png}
+    \caption{Localised States, with the introduction of disorder, the particles get trapped around the peaks and troughs with energy different from the eigen energies.\cite{JK.Jain}}
+    \label{7}
+\end{figure}
+ Therefore, the extended states are now converted to localized states, restricted to some sample regions.
+
+This can lead us to think that the edge modes should also be localized. As discussed earlier, the chiral modes are immune to disorder. The presence of peaks or troughs near the edge distorts the electron's motion but fails to trap it in a closed orbit (Figure \ref{7}).
+\begin{figure}[!h]
+    \centering
+    \includegraphics[scale = 0.45]{Potential Landscape.png}
+    \caption{Potential landscape.\cite{D.Tong} }
+    \label{8}
+\end{figure}
+So, now we have enough pieces of information to be able to explain the results. When we reduce the magnetic field, the number of states in a Landau level decreases. Instead of occupying the next level, the electrons occupy the localized states. The localized states trap the electrons to a portion of the sample, thus not contributing to the current. While the edge states continue with their chiral motion unaffected, and the resistivity of the system remains the same. This leads to the quantization and the plateau we see in the resistivity plots in IQHE.
+\begin{figure}[!h]
+    \centering
+    \includegraphics[scale = 0.45]{Broadening of Landau levels.png}
+    \caption{Broadening of Landau levels~\cite{D.Tong}.}
+    \label{9}
+\end{figure}
+Thus, we see from (Figure \ref{9}) that the Landau levels have broadened into bands consisting of localized and extended states. The localized states have energies between two Landau levels which do not contribute to the current. At the same time, the extended states have energies corresponding to Landau levels which carry most of the current. We can therefore say the bulk of the material is an insulator, while the edge of the material acts like a metal. 

@@ -1,0 +1,96 @@
+\chapter{Tight binding model}
+\section{Introduction}
+The tight binding model aims to find an electronic wave function on an infinite periodic array without considering the enormous Hilbert space of all possible wave functions\cite{MM}. The tight-binding model (or TB model) is an approach to calculating electronic band structure using an approximate set of wave functions based on the superposition of wave functions for isolated atoms located at each atomic site. The electrons in this model should be tightly bound to the atom they belong to and have limited interaction with states and potentials on surrounding solid atoms. As a result, the wave function of the electron will be similar to the atomic orbital of the free atom to which it belongs.
+\section{Mathematical formulation}
+We introduce the atomic orbitals $\varphi_{m}(\mathbf{r})$, which are eigenfunctions of the Hamiltonian $H_{\text {at }}$ of a single isolated atom. When the atom is placed in a crystal, this atomic wave function overlaps adjacent atomic sites and so is not the true eigenfunction of the crystal Hamiltonian. The overlap is less when electrons are tightly bound, which is the source of the descriptor "tight-binding." Any corrections to the atomic potential $\Delta U$ required to obtain the true Hamiltonian $H$ of the system are assumed small:
+\begin{equation}
+H(\mathbf{r})=H_{\mathrm{at}}(\mathbf{r})+\sum_{\mathbf{R}_{n} \neq \mathbf{0}} V\left(\mathbf{r}-\mathbf{R}_{n}\right)=H_{\mathrm{at}}(\mathbf{r})+\Delta U(\mathbf{r})    
+\end{equation}
+where $V\left(\mathbf{r}-\mathbf{R}_{n}\right)$ denotes the atomic potential of one atom located at site $\mathbf{R}_{n}$ in the crystal lattice. A solution $\psi_{m}$ to the time-independent single electron Schrödinger equation is then approximated as a linear combination of atomic orbitals $\varphi_{m}\left(\mathbf{r}-\mathbf{R}_{\mathbf{n}}\right)$ :
+\begin{equation}
+\psi_{m}(\mathbf{r})=\sum_{\mathbf{R}_{n}} b_{m}\left(\mathbf{R}_{n}\right) \varphi_{m}\left(\mathbf{r}-\mathbf{R}_{n}\right)    
+\end{equation}
+where $m$ refers to the $m^th$ atomic energy level.
+
+\subsection{Translational symmetry and normalization}
+
+The Bloch theorem states that the wave function in a crystal can change under translation only by a phase factor:
+\begin{equation}
+\psi\left(\mathbf{r}+\mathbf{R}_{\ell}\right)=e^{i \mathbf{k} \cdot \mathbf{R}_{\ell}} \psi(\mathbf{r})    
+\end{equation}
+where $\mathbf{k}$ is the wave vector of the wave function. Consequently, the coefficients satisfy:
+\begin{equation}
+\sum_{\mathbf{R}_{n}} b_{m}\left(\mathbf{R}_{n}\right) \varphi_{m}\left(\mathbf{r}-\mathbf{R}_{n}+\mathbf{R}_{\ell}\right)=e^{i \mathbf{k} \cdot \mathbf{R}_{\ell}} \sum_{\mathbf{R}_{n}} b_{m}\left(\mathbf{R}_{n}\right) \varphi_{m}\left(\mathbf{r}-\mathbf{R}_{n}\right) .    
+\end{equation}
+By substituting: $\mathbf{R}_{p}=\mathbf{R}_{n}-\mathbf{R}_{\ell}$, we find:
+\begin{equation}
+b_{m}\left(\mathbf{R}_{p}+\mathbf{R}_{\ell}\right)=e^{i \mathbf{k} \cdot \mathbf{R}_{\ell}} b_{m}\left(\mathbf{R}_{p}\right),\left(\text { where in RHS we have replaced the dummy index } \mathbf{R}_{n} \text { with } \mathbf{R}_{p}\right. \text { ) }    
+\end{equation}
+or
+\begin{equation}
+b_{m}\left(\mathbf{R}_{\ell}\right)=e^{i \mathbf{k} \cdot \mathbf{R}_{\ell}} b_{m}(\mathbf{0})    
+\end{equation}
+Normalizing the wave function to unity:
+\begin{eqnarray}
+ & \int d^{3} r \psi_{m}^{*}(\mathbf{r}) \psi_{m}(\mathbf{r})=1 \\
+&=\sum_{\mathbf{R}_{n}} b_{m}^{*}\left(\mathbf{R}_{n}\right) \sum_{\mathbf{R}_{\ell}} b_{m}\left(\mathbf{R}_{\ell}\right) \int d^{3} r \varphi_{m}^{*}\left(\mathbf{r}-\mathbf{R}_{n}\right) \varphi_{m}\left(\mathbf{r}-\mathbf{R}_{\ell}\right) \\
+&=b_{m}^{*}(0) b_{m}(0) \sum_{\mathbf{R}_{n}} e^{-i \mathbf{k} \cdot \mathbf{R}_{\mathbf{n}}} \sum_{\mathbf{R}_{\ell}} e^{i \mathbf{k} \cdot \mathbf{R}_{\ell}} \int d^{3} r \varphi_{m}^{*}\left(\mathbf{r}-\mathbf{R}_{n}\right) \varphi_{m}\left(\mathbf{r}-\mathbf{R}_{\ell}\right) \\
+&=N b_{m}^{*}(0) b_{m}(0) \sum_{\mathbf{R}_{p}} e^{-i \mathbf{k} \cdot \mathbf{R}_{p}} \int d^{3} r \varphi_{m}^{*}\left(\mathbf{r}-\mathbf{R}_{p}\right) \varphi_{m}(\mathbf{r}) \\
+&=N b_{m}^{*}(0) b_{m}(0) \sum_{\mathbf{R}_{p}} e^{i \mathbf{k} \cdot \mathbf{R}_{p}} \int d^{3} r \varphi_{m}^{*}(\mathbf{r}) \varphi_{m}\left(\mathbf{r}-\mathbf{R}_{p}\right),   
+\end{eqnarray}
+so the normalization sets $b_{m}(0)$ as
+\begin{equation}
+b_{m}^{*}(0) b_{m}(0)=\frac{1}{N} \cdot \frac{1}{1+\sum_{\mathbf{R}_{p} \neq 0} e^{i \mathbf{k} \cdot \mathbf{R}_{p}} \alpha_{m}\left(\mathbf{R}_{p}\right)}    
+\end{equation}
+where $\alpha_{m}\left(\boldsymbol{R}_{\mathrm{p}}\right)$ are the atomic overlap integrals, which frequently are neglected, resulting in 
+\begin{equation}
+b_{m}^{*}(0) b_{m}(0)=\frac{1}{N} \cdot \frac{1}{1+\sum_{\mathbf{R}_{p} \neq 0} e^{i \mathbf{k} \cdot \mathbf{R}_{p}} \alpha_{m}\left(\mathbf{R}_{p}\right)}    
+\end{equation}
+and 
+\begin{equation}
+\psi_{m}(\mathbf{r}) \approx \frac{1}{\sqrt{N}} \sum_{\mathbf{R}_{n}} e^{i \mathbf{k} \cdot \mathbf{R}_{n}} \varphi_{m}\left(\mathbf{r}-\mathbf{R}_{n}\right) .    
+\end{equation}
+\section{The tight binding Hamiltonian}
+
+Using the tight binding form for the wave function and assuming only the $m$-th atomic energy level is essential for the $m$-th energy band, the Bloch energies $\varepsilon_{m}$ are of the form:
+$$
+\begin{aligned}
+\varepsilon_{m}= & \int d^{3} r \psi_{m}^{*}(\mathbf{r}) H(\mathbf{r}) \psi_{m}(\mathbf{r}) \\
+& =\sum_{\mathbf{R}_{n}} b_{m}^{*}\left(\mathbf{R}_{n}\right) \int d^{3} r \varphi_{m}^{*}\left(\mathbf{r}-\mathbf{R}_{n}\right) H(\mathbf{r}) \psi_{m}(\mathbf{r}) \\
+& =\sum_{\mathbf{R}_{n}} b_{m}^{*}\left(\mathbf{R}_{n}\right) \int d^{3} r \varphi_{m}^{*}\left(\mathbf{r}-\mathbf{R}_{n}\right) H_{\mathrm{at}}(\mathbf{r}) \psi_{m}(\mathbf{r})+\sum_{\mathbf{R}_{n}} b_{m}^{*}\left(\mathbf{R}_{n}\right) \int d^{3} r \varphi_{m}^{*}\left(\mathbf{r}-\mathbf{R}_{n}\right) \Delta U(\mathbf{r}) \psi_{m}(\mathbf{r}) \\
+& =\sum_{\mathbf{R}_{n}, \mathbf{R}_{l}} b_{m}^{*}\left(\mathbf{R}_{n}\right) b_{m}\left(\mathbf{R}_{l}\right) \int d^{3} r \varphi_{m}^{*}\left(\mathbf{r}-\mathbf{R}_{n}\right) H_{\mathrm{at}}(\mathbf{r}) \varphi_{m}\left(\mathbf{r}-\mathbf{R}_{l}\right)+b_{m}^{*}(0) \sum_{\mathbf{R}_{n}} e^{-i \mathbf{k} \cdot \mathbf{R}_{n}} \int d^{3} r \varphi_{m}^{*}\left(\mathbf{r}-\mathbf{R}_{n}\right) \Delta U(\mathbf{r}) \psi_{m}(\mathbf{r}) \\
+& =b_{m}^{*}(\mathbf{0}) b_{m}(\mathbf{0}) N \int d^{3} r \varphi_{m}^{*}(\mathbf{r}) H_{\mathrm{at}}(\mathbf{r}) \varphi_{m}(\mathbf{r})+b_{m}^{*}(0) \sum_{\mathbf{R}_{n}} e^{-i \mathbf{k} \cdot \mathbf{R}_{n}} \int d^{3} r \varphi_{m}^{*}\left(\mathbf{r}-\mathbf{R}_{n}\right) \Delta U(\mathbf{r}) \psi_{m}(\mathbf{r}) \\
+& \approx E_{m}+b_{m}^{*}(0) \sum_{\mathbf{R}_{n}} e^{-i \mathbf{k} \cdot \mathbf{R}_{n}} \int d^{3} r \varphi_{m}^{*}\left(\mathbf{r}-\mathbf{R}_{n}\right) \Delta U(\mathbf{r}) \psi_{m}(\mathbf{r}) .
+\end{aligned}
+$$
+
+Here in the last step, it was assumed that the overlap integral is zero, and thus $b_{m}^{*}(\mathbf{0}) b_{m}(\mathbf{0})=\frac{1}{N}$. The energy then becomes
+\begin{equation}
+\varepsilon_{m}(\mathbf{k})=E_{m}-N\left|b_{m}(0)\right|^{2}\left(\beta_{m}+\sum_{\mathbf{R}_{n} \neq 0} \sum_{l} \gamma_{m, l}\left(\mathbf{R}_{n}\right) e^{i \mathbf{k} \cdot \mathbf{R}_{n}}\right) \\    
+\end{equation}
+On simplifying:
+\begin{equation}
+\varepsilon_{m}(\mathbf{k})
+=E_{m}-\frac{\beta_{m}+\sum_{\mathbf{R}_{n} \neq 0} \sum_{l} e^{i \mathbf{k} \cdot \mathbf{R}_{n}} \gamma_{m, l}\left(\mathbf{R}_{n}\right)}{1+\sum_{\mathbf{R}_{n} \neq 0} \sum_{l} e^{i \mathbf{k} \cdot \mathbf{R}_{n}} \alpha_{m, l}\left(\mathbf{R}_{n}\right)}
+\end{equation}
+where $E_{\mathrm{m}}$ is the energy of the $m$-th atomic level, and $\alpha_{m, l}, \beta_{m}$ and $\gamma_{m, l}$ are the tight binding matrix elements discussed below.
+
+\section{The tight binding matrix elements}
+
+The elements:
+\begin{equation}
+\beta_{m}=-\int \varphi_{m}^{*}(\mathbf{r}) \Delta U(\mathbf{r}) \varphi_{m}(\mathbf{r}) d^{3} r    
+\end{equation}
+are the atomic energy shift due to the potential on neighboring atoms. This term is relatively small in most cases. If it is large, it means that potentials on neighboring atoms greatly influence the energy of the central atom.
+
+The next class of terms
+\begin{equation}
+\gamma_{m, l}\left(\mathbf{R}_{n}\right)=-\int \varphi_{m}^{*}(\mathbf{r}) \Delta U(\mathbf{r}) \varphi_{l}\left(\mathbf{r}-\mathbf{R}_{n}\right) d^{3} r    
+\end{equation}
+It is the interatomic matrix element between the atomic orbitals $m$ and $l$ on adjacent atoms. It is also called the bond energy or two-center integral and is the dominant term in the tight-binding model.
+
+The last class of terms
+\begin{equation}
+\alpha_{m, l}\left(\mathbf{R}_{n}\right)=\int \varphi_{m}^{*}(\mathbf{r}) \varphi_{l}\left(\mathbf{r}-\mathbf{R}_{n}\right) d^{3} r    
+\end{equation}
+Denote the overlap integrals between the atomic orbitals $m$ and $l$ on adjacent atoms. These, too, are typically small; if not, then Pauli's repulsion has a non-negligible influence on the energy of the central atom.

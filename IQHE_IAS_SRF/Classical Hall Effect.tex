@@ -1,0 +1,77 @@
+\chapter{Classical Hall effect}
+\section{Introduction}
+In 1879 Edwin Hall discovered that a transverse voltage difference builds across a current-carrying conductor in a perpendicular magnetic field. This effect is known as the Hall effect, and the transverse voltage is known as the Hall voltage.
+ \begin{figure}[h]
+ \centering
+\includegraphics[width=5cm, height=7cm]{Classical Hall effect.pdf}
+\caption{\label{Classical Hall effect}Classical Hall effect is shown by an external voltage applied on a hole-rich material in the x-direction with a uniform magnetic field along the z-axis. The figure shows the development of the Hall voltage, $V_H$, in the y-direction.}
+\end{figure}   
+\section{Classical resistivity in 3-D}
+To calculate resistivity classically, we make use of the Drude Model.
+The resulting equation of motion of an electron is:
+\begin{equation}
+m \frac{d \vec{v}}{d t}=-e \vec{E}-e(\vec{v} \times \vec{B})-\frac{m \vec{v}}{\tau},    
+\end{equation}
+where ,$\vec{v}$ is the drift velocity, $B$ is the magnetic field, $\tau$ is the mean free time, $E$ is the Electric field.
+Looking at the equilibrium solution:-
+\begin{equation}
+  v_x+\frac{e \tau}{m} B v_y=-\frac{e \tau}{m} E_x 
+\end{equation}
+\begin{equation}
+ v_y-\frac{e \tau}{m} B v_x=-\frac{e \tau}{m} E_y
+\end{equation}  
+Writing the above equations in the matrix form:-
+\begin{equation}
+\left(\begin{array}{cc}
+1 & \frac{e \tau B}{m} \\
+\frac{-e \tau B}{m} & 1
+\end{array}\right)\left(\begin{array}{l}
+v_x \\
+v_y
+\end{array}\right)
+ =-\frac{e \tau}{m}\left(\begin{array}{c}
+E_x \\
+E_y
+\end{array}\right) \\
+\end{equation} 
+\begin{equation}
+\label{classical drift veocity}
+\left(\begin{array}{cc}
+1 & \frac{e \tau B}{m} \\
+\frac{-e \tau B}{m} & 1
+\end{array}\right) \vec{v}  =-\frac{e \tau}{m} \vec{E}
+\end{equation}
+The current density $\vec{J}$ is defined as:
+\begin{equation}
+\vec{J}=-N e \vec{v}
+\end{equation}
+Using the definition of $\vec{J}$ and Ohm's law we get;-
+\begin{equation}
+\label{Current density}
+\vec{J}  =\sigma \vec{E} \\
+\text { or, } \quad \vec{E}  =\rho \vec{J}
+\end{equation}
+Substituting Eq.~\eqref{Current density} in Eq.~\eqref{classical drift veocity} and then we get:-
+\begin{equation}
+\rho=\left(\begin{array}{cc}
+\rho_{x x} & \rho_{x y} \\
+\rho_{y x} & \rho_{y y}
+\end{array}\right)=\frac{m}{N e^2 \tau}\left(\begin{array}{cc}
+1 & \frac{e \tau B}{m} \\
+\frac{-e \tau B}{m} & 1
+\end{array}\right)
+\end{equation}
+Hence,
+\begin{equation}
+\rho_{x x}=\frac{m}{N e^2 \tau}
+\end{equation} 
+\begin{equation}
+\rho_{x y}=\frac{B}{N e}
+\end{equation}
+We can look at the differences between the Classical Hall effect and the Quantum Hall effect in the following picture.
+\begin{figure}[!h]
+    \centering
+    \includegraphics[scale = 0.25]{Classical vs Quantum Hall effect.pdf}
+    \caption{Classical Hall effect showed in 3-Dimensions(3D) and Quantum Hall effect showed in 2-Dimensions}
+    \label{pic6.2}
+\end{figure}

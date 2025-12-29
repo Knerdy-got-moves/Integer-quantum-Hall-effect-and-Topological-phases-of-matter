@@ -1,0 +1,108 @@
+\chapter{Adiabatic theorem, Berry phase, and Berry connection}
+\section{Adiabatic theorem}\cite{Griffith}
+In classical and quantum mechanics, an adiabatic process is a quasi-static process. In condensed matter physics, if the timescale of interaction between particles of the system is much less than the average timescale of propagation of the system, it can be modeled as an adiabatic process. Berry Phase is the geometric phase acquired throughout a cyclic adiabatic process, similar to a Foucault pendulum transported in a closed loop(such as Earth's rotation) on Earth. The Chern number is the Berry phase with parameter k, the wave vector. If it is non-zero, it indicates a topological phase. The proof of the adiabatic theorem involves several steps. Here is a pointwise explanation of the critical steps involved.
+\begin{enumerate}
+             \item  Hamiltonian parameterization: Start with a time-dependent Hamiltonian, $H(t)$, which varies slowly with time. We assume that $H(t)$ is continuously differentiable, and the rate of change is slow compared to the characteristic timescale of the system.
+             \item Schrödinger equation: Consider the time-dependent Schrödinger equation, which describes the evolution of the quantum state. It can be written as:-
+            \begin{equation}\label{Schrodinger Equation}
+            \hat{H} |\Psi(t) \rangle = i \hbar \frac{\partial}{\partial t} |\Psi(t) \rangle ,\end{equation} 
+            where $\hbar$ is the reduced Planck's constant,$ |\Psi \rangle$ is the quantum state.
+             \item Writing the general solution:-
+             \begin{equation}\label{Superposition of states}|\Psi(t) \rangle =\Sigma_n c_n(t)e^{-i\theta_n(t)}|n(t)\rangle,\end{equation} where $c_n(t)$ is the probability amplitude, $\theta_n(t)$ is the dynamic phase factor:-$$\int _{\mathbf {t}}d\mathbf {t}   E_{n}(\mathbf {t} ),$$ and $|n(t)\rangle$ is an eigenstate of $H(t)$ with eigenvalue $E_n(t)$.
+             \item Applying the Adiabatic approximation, we take the time derivative of Eq.~\eqref{Schrodinger Equation} and an inner product with the energy eigenstate, $|m(t)\rangle$. On expanding, we get elements of the matrix$\dot{\hat{H}}$, which we take as zero. We do the same steps with Eq.~\eqref{Superposition of states} and substitute the value of $\langle\Psi_m|{\dot{\Psi}}_n \rangle$ we get from solving Eq.~\eqref{Schrodinger Equation}.
+              \item From the orthonormality of energy eigenkets, we get the value of the constants, $c_n$.
+             \item Comparing eigenstates at time, $t=t_i$ and $t=t_f$:- 
+                    \begin{equation}
+                        \left|\psi_n\left(t_f\right)\right\rangle=e^{-(i / \hbar) \int_{t_i}^{t_f} E\left(t^{\prime}\right) d t^{\prime}} e^{i \gamma}\left|\psi_n\left(t_i\right)\right\rangle    
+                    \end{equation}
+                where:- 
+                    \begin{equation}
+                    \label{Berry phase}
+                    \gamma=\int_0^t\left\langle\psi_n\left(t^{\prime}\right) \mid \dot{\psi}_n\left(t^{\prime}\right)\right\rangle d t^{\prime}\\
+                    \end{equation}
+\end{enumerate}
+\section{Berry phase and Berry curvature } \cite{MM}
+From Eq.~\eqref{Berry phase}, by changing the variable t into generalized parameters, we could rewrite Berry's phase into \\
+\begin{equation}
+ \gamma _{n}[C]=i\oint _{C}\langle n,t|{\big (}\nabla _{R}|n,t\rangle {\big )}\,dR,
+\gamma _{n}=\int _{\mathcal {C}}d\mathbf {R} \cdot {\mathcal {A}}_{n}(\mathbf {R} )   
+\end{equation}
+where,
+\begin{equation}
+\mathcal {A}_{n}(\mathbf {R} )=i\langle n(\mathbf {R} )|\nabla _{\mathbf {R} }|n(\mathbf {R} )\rangle     
+\end{equation}
+Here $\mathcal {A}_{n}$is a vector-valued function known as the Berry connection (or Berry potential), and $n$ represents the indices of the coordinates of R.
+\subsection{Berry phase of the adiabatic dynamics of spin}\cite{Auerbach}
+This is a toy problem to understand the intuition behind the Berry phase and Berry curvature. An alternate way to understand Berry curvature can be through the Aharonov-Bohm effect in which a  Berry phase shift is observed between two electrons traversing different paths in a magnetic field (vector potential$\vec{A}$)leading to the formation of fringes. We use the coherent state representation of spin as having a quantum spin with respect to a fixed axis (z-axis) is undesirable.We want to choose a basis $|\hat{\Omega}\rangle$ with the following characteristics:-
+\begin{itemize}
+    \item The vector $\langle\mathbf{S}\rangle$ of expectation values of the spin operators in the basis state $|\hat{\Omega}\rangle$ points along the unit vector $\hat{\Omega}$.
+    \item The representation should be the closest to the classical picture. i.e., the uncertainty relation between two conjugate parameters must be minimum.
+\end{itemize}
+The unit vector $\hat{\Omega}=(\sin \theta \cos \phi, \sin \theta \sin \phi, \cos \theta)$,
+$$
+|\hat{\Omega}\rangle=R(\chi, \theta, \phi)|s, s\rangle=e^{i S^z \phi} e^{i S^y \theta} e^{i S^z \chi}|s, s\rangle
+$$,
+where $R$ is the rotation operator $R(\theta, \phi, \chi)$ that is a function of three Euler angles, $|s, s\rangle$ is the eigenstates of spin in the usual $S_z$ basis. 
+One can use the explicit representation of the coherent states and some algebra to compute the inner product
+\begin{equation}
+\left\langle\hat{\Omega} \mid \hat{\Omega}^{\prime}\right\rangle=\left(\frac{1+\hat{\Omega} \cdot \hat{\Omega}^{\prime}}{2}\right)^s e^{-i s \psi}
+\end{equation}
+with
+\begin{equation}
+\psi=2 \arctan \left[\tan \left(\frac{\phi-\phi^{\prime}}{2}\right) \frac{\cos \left[\frac{1}{2}\left(\theta+\theta^{\prime}\right)\right]}{\cos \left[\frac{1}{2}\left(\theta-\theta^{\prime}\right)\right]}\right]+\chi-\chi^{\prime}
+\end{equation} The completeness relation is:-
+\begin{equation}
+\frac{2 s+1}{4 \pi} \int d \hat{\Omega}|\hat{\Omega}\rangle\langle\hat{\Omega}|=1
+\end{equation}
+One can choose to set $s=1 / 2$ and consider dynamics in the two-by-two Hamiltonian given by
+$$
+H=-\hat{\mathbf{n}} \cdot \boldsymbol{\sigma}
+$$
+where $\sigma$ is a vector of Pauli matrices. At time $t=0$, suppose that the spin is initially prepared in the ground state $|\hat{\Omega}\rangle$, with $\hat{\Omega}=\hat{\mathbf{n}}$. Let the unit vector $\mathbf{n}$ be time-dependent, but assume that it changes sufficiently slowly that there are no transitions out of the lower-energy spin state. In this problem the energies are constant, so we can neglect the energetic part of the phase change around a path, assuming the path is traced out adiabatically. the Berry phase is:-
+\begin{equation}
+\gamma=\int_{t_i}^{t_f}\left\langle\hat{\Omega}(t)\left|i \frac{d}{d t}\right| \hat{\Omega}(t)\right\rangle d t
+\end{equation}
+Consider the overlap of wavefunctions at two slightly different times $t$ and $t+d t$. The magnitude of this overlap is less than 1, but only by an amount of order $d t^2$. At order $d t$, the change in the overlap is purely imaginary. We can use this to build up the Berry phase over a segment of the path as a product of many overlaps.
+$$
+\begin{aligned}
+\gamma= & -\Im \log \left[\left\langle\hat{\Omega}\left(t_i\right) \mid \hat{\Omega}\left(t_i+d t\right)\right\rangle\left\langle\hat{\Omega}\left(t_i+d t\right) \mid \hat{\Omega}\left(t_i+2 d t\right)\right\rangle \ldots\right. \\
+& \left.\ldots\left\langle\hat{\Omega}\left(t_f-2 d t\right) \mid \hat{\Omega}\left(t_f-d t\right)\right\rangle\left\langle\hat{\Omega}\left(t_f-d t\right) \mid \hat{\Omega}\left(t_f\right)\right\rangle\right]
+\end{aligned}
+$$
+$$
+\begin{aligned}
+-\Im \log \left\langle\hat{\Omega}\left(t_i\right) \mid \hat{\Omega}\left(t_i+d t\right)\right\rangle & \approx-\Im \log \left(1+d t\left\langle\hat{\Omega} \mid \frac{d}{d t} \hat{\Omega}\right\rangle\right) \\
+& \approx-d t \i d t\left\langle\hat{\Omega} \mid \frac{d}{d t} \hat{\Omega}\right\rangle,
+\end{aligned}
+$$
+Where we have used that the inner product in the last step is purely imaginary.
+
+Using the explicit, coherent state representation, one finds for the overlap$^{[10]}$
+where $\dot{\chi}$ results from whatever phase convention was chosen in the coherent state via
+\begin{equation}
+\dot{\chi}=\frac{d \chi}{d \hat{\Omega}} \frac{d \hat{\Omega}}{d t}
+\end{equation}
+So the change in the Berry phase is
+\begin{equation}
+\dot{\gamma}=-s \dot{\chi}-s d t \dot{\phi} \cos (\theta(t))
+\end{equation}
+Around a closed path, $\dot{\chi}$ must integrate to zero since $\chi$ only changes through the change in $\hat{\Omega}$, which returns to its initial value. The other part need not be zero and has a simple geometrical interpretation. For an open path, the phase change is not directly meaningful since it depends on the arbitrary phase convention in $\chi$.
+The phase gained around a closed path $\mathcal{P}$ on the unit sphere is:-
+\begin{equation}
+\gamma_{\mathcal{P}}=-s \int_{t_i}^{t_f} d t \dot{\phi} \cos \theta=-s \oint_{\phi_i}^{\phi_f=\phi_i} d \phi \cos (\theta(\phi))
+\end{equation}
+Here we assume that the path did not encircle the North Pole so that $\varphi$ remained well defined. Now the integrand is just the integral of $d(\cos \theta)$ as $\theta$ runs from the North Pole to the present point.
+To summarize, the net effect of taking the spin around a closed path is to induce a phase proportional to $s$ and to the area enclosed. This can be written as the loop integral of a "magnetic monopole" vector potential on the sphere with constant field strength:
+\begin{equation}
+\gamma=s \int_{t_i}^{t_f} d t \mathbf{A}(\hat{\Omega}) \dot{\hat{\Omega}}
+\end{equation}
+One gauge choice for this vector potential is
+\begin{equation}
+\mathcal{A}=-\frac{1-\cos \theta}{\sin \theta} \hat{\phi}
+\end{equation}
+which has a singularity at the South Pole $(\theta=\pi)$.
+A subtlety is that any gauge choice for a nonzero monopole vector potential has to have a singularity somewhere on the sphere, because of the nonzero integral of the curl of $\mathcal{A}$, which is gauge-independent. For example, consider integrating the vector potential in (25) over a small circle around the South Pole. The result will be nearly equal to the area of the sphere (because we set up this gauge choice to capture areas starting from the North Pole, as in our explicit calculation), which explains why the vector potential had to diverge in order to get a finite answer over a tiny circle. At the North Pole, there is a Dirac string containing (Berry) magnetic flux entering the sphere, in order for the flux elsewhere to be uniformly directed outward as if a magnetic monopole were located at the center of the sphere. An alternative gauge choice would define areas starting from the South Pole and be singular at the North Pole. Note that the observable Berry phase factor $e^{i \gamma}$ is unchanged under this difference of $4 \pi$, though, because even after multiplying by the spin quantum number $s$, the ambiguity is a multiple of $2 \pi$.
+
+ This example also displays an analog of Foucault's pendulum, which ends with the same phase at the end of one rotation of the Earth.
+
+ The techniques used in this problem will be helpful in determining the resistivity from the Landau levels in IQHE.

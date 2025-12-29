@@ -1,0 +1,58 @@
+\chapter{Perturbation theory}
+The quantum mechanical study of conservative physical systems is based on the eigenvalue equation of the Hamiltonian operator. The Schrodinger Equation is a second-order differential equation. We may need to find the exact solution to a problem. Two or many-body problems pose such issues. This is because the force on a body is inversely proportional to the square of the distance (the independent variable with respect to which we are differentiating). Thus, even a tiny change in the initial conditions can significantly change the force. Therefore, the system is "chaotic." We still need to solve such equations analytically. If we know the exact solution to the Hamiltonian that excludes a "small" term, then we can use perturbation theory to solve the Hamiltonian, including the "small" term.
+\section{What is a perturbation?}
+The perturbation is a small action on the system, so its effects can be treated as a series of corrections to the exact solution. A small perturbation is assumed not to change the Hilbert Space of the system on which it acts. The system's state changes such that it can be expressed as a linear combination of the initial state and states orthogonal to the initial state. 
+
+The more the strength of the perturbation, the more will the Hilbert space change. Perturbations that are strong enough that the system leaves its original Hilbert Space are entirely known to cause a phase transition. 
+
+Unitary perturbations don't disturb the Hilbert Space since the inner product of any two vectors is preserved under unitary transformation. An example of this is the interaction of a quantum system with a weak Electromagnetic field. Another critical example is, if given Hilbert Spaces of states for a single particle, we can create a new Hilbert Space of states for two particles by taking a tensor product of their individual Hilbert Spaces. The tensor product is a unitary transformation. Thus, it doesn't affect the states of the individual particles.
+
+\section{General approach}
+The Schrodinger Equation is $H\ket{\psi} = E\ket{\psi}$. Assume that we know the exact analytical solution of the eigenvalue problem:\cite{Griffith}
+\begin{equation}\label{eq6}
+    H^0\ket{\psi_n^0} = E_n^0\ket{\psi_n^0}
+\end{equation}
+and that we want to find a solution to 
+\begin{equation}\label{eq5}
+    (H^0+H')\ket{\psi_n} = E_n\ket{\psi_n^0}
+\end{equation} 
+Using perturbation theory, we can find the approximate solution to eq.\ref{eq5}. However, some conditions must be satisfied for the perturbation theory to give a valid answer. Qualitatively, the condition is that $H'$ should be a "small" perturbation. This is so that the Hilbert space of the initial system, satisfying eq.\ref{eq6}, remains the same even on the addition of the perturbation, i.e., the solution to eq.\ref{eq5} belongs to the same Hilbert Space as spanned by the solutions to eq.\ref{eq6} (for different eigenvalues, E), HS. 
+
+Let's try to solve eq.\ref{eq5} for corresponding to a particular eigenvalue of eq.\ref{eq6}, $E^0$. Thus, we can assume that the corresponding energy eigenvalue and state to be written as 
+\begin{align}
+    &E_n = E_n^0 + E_n^1 + E_n^2 + ... \\
+    &\ket{\psi_n} = \ket{\psi_n^0} + \ket{\psi_n^1} + \ket{\psi_n^2} + ... \in HS
+\end{align}
+
+We can treat $\ket{\psi_n^1}$ as a linear combination of orthogonal basis eigenstates of HS. In fact, in the first order approximation, we will see that we can write $\ket{\psi_n^1}$ as a linear combination of orthogonal basis eigenstates of HS, excluding $\ket{\psi_n^0}$. This is because adding any constant multiplied with $\ket{\psi_n^0}$ to $\ket{\psi_n^1}$ will remain a solution until first order correction.
+
+\subsection{First order correction}
+In the first-order correction, we define the following:
+\begin{align}
+    & E_n = E_n^0 + E_n^1 \\ \label{eq7}
+    & \ket{\psi_n} = \ket{\psi_n^0} + \ket{\psi_n^1} \in HS \\ \label{eq8}
+    & \Rightarrow (H^0 + H')(\ket{\psi_n^0} + \ket{\psi_n^1}) = (E_n^0 + E_n^1)(\ket{\psi_n^0} + \ket{\psi_n^1})
+\end{align}
+Neglect the terms where a which is a square of the perturbation term or a product of perturbation terms (like the product of $E_n^1$ and $\ket{\psi_n^1}$ and the action of $H$ and $\ket{\psi_n^1}$). Then we get:
+\begin{align}
+    & (H^0 + H')\ket{\psi_n^0} + H^0 \ket{\psi_n^1} = (E_n^0 + E_n^1)\ket{\psi_n^0} + E_n^0\ket{\psi_n^1} \\
+    & \text{From eq. \ref{eq8}}\Rightarrow H'\ket{\psi_n^0} + H^0 \ket{\psi_n^1} = E_n^1\ket{\psi_n^0} + E_n^0\ket{\psi_n^1}\label{eq9}
+\end{align}
+Let's solve for $E_n^1$. Take the inner product of  eq.\ref{eq9} with $\bra{\psi_n^0}$
+
+\begin{align}
+    & \braket{\psi_n^0|H'\psi_n^0}  + \braket{\psi_n^0H^0|\psi_n^1} = E_n^1\braket{\psi_n^0|\psi_n^0} + E_n^0\braket{\psi_n^0|\psi_n^1} \\
+    & \Rightarrow \int_{over all space} d^3x_1d^3x_2(\psi_n^{0*} H'\psi_n^0) = E_n^1\label{eq10} \\
+    & \Rightarrow E_n = E_n^0 + \int_{over all space} d^3x_1 d^3x_2(\psi_n^{0*} H'\psi_n^0) 
+\end{align}
+
+Let's solve for $\ket{\psi_n^1}$. 
+\begin{align}
+    & \ket{\psi_n^1} = \sum_{j;j \neq n} a_{nj}\ket{\psi_j^0}\label{eq11}
+\end{align}
+We can see that any constant multiplied with $\ket{\psi_n^0}$ to $\ket{\psi_n^1}$ in eq.\ref{eq11} will remain a  solution to eq.\ref{eq9}, till first order correction. To find $a_{nj}$, take the inner product of  eq.\ref{eq9} with $\bra{\psi_j^0}$
+
+\begin{align}
+    & \braket{\psi_j^0|H'\psi_n^0}  + \braket{\psi_j^0|H^0\psi_n^1} = E_n^1\braket{\psi_j^0|\psi_n^0} + E_n^0\braket{\psi_j^0|\psi_n^1} \\
+    & \Rightarrow a_{nj} = \frac{(\int_{over all space} d^3x_1d^3x_2(\psi_j^{0*} H'\psi_n^0))}{E_n^- E_j^0} = = \frac{\braket{H'}_{jn}}{E_n^- E_j^0}
+\end{align}

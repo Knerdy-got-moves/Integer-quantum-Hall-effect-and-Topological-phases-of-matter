@@ -1,0 +1,219 @@
+\chapter{Identical particles}
+\section{What are identical particles?}
+Two identical particles have the same intrinsic properties. Intrinsic properties are those of an entity that defines the particle and doesn't change unless the particle changes to another particle~\cite{N.Sneha}. Intrinsic properties include:
+\begin{enumerate}
+    \item Mass
+    \item Charge
+    \item Spin
+    \item Magnetic moment
+    \item Color charge
+    \item Lepton number
+    \item Baryon number
+\end{enumerate}
+
+Identical particles may be in different states. If there are two electrons, one could have a spin-up state, and the other could have a spin-down state, but both are spin-1/2 systems. Thus, they are still identical. Similarly, one Helium atom could have both electrons in the ground state. In contrast, another Helium atom could have one electron in the ground state and another in an excited state. Still, regardless of the energy of the Helium atoms, they are identical~\cite{ProfessorM}. 
+
+\section{Consequence of identical particles}
+Let two identical non-interacting particles constitute a physical system. The system remains unchanged under evolution with time and in properties when the roles of the two particles are exchanged. 
+
+In the classical system, we consider the system of n identical particles/ objects to be a part of a more generalized type of system of any n particles/ objects. Once the initial states(boundary conditions) of the particles are known, the trajectory of the particles is known. Based on the initial time, the particles can be labeled l, 2, ...,n, and we can trace the particles uniquely regardless of the other particles. 
+\begin{figure}[!h]
+    \centering
+    \includegraphics[scale = 0.45]{Classical particles.pdf}
+    \caption{Schematic representation of trajectories of classical identical particles}
+    \label{2.1}
+\end{figure}
+
+\textbf{Hence, in classical mechanics, identical particles are distinguishable, but exchanging two identical particles will lead to the same physics.}
+\begin{figure}[!h]
+    \centering
+    \includegraphics[scale = 0.45]{Quantum identical particles.pdf }
+    \caption{Schematic representation to understand the consequence of quantum identical particles
+    \label{2.2}}
+\end{figure}
+However, in quantum mechanics, we don't have definite trajectories. Even if, at time t0, two non-overlapping wavepackets, 1 and 2, associated with two identical particles, 'a' and 'b,' separated in space, their subsequent evolution can mix them. When we detect a particle at position A in space, such that the two particles have non-zero position probability at A at that time, there is no way of knowing if this particle is the one with initial wavepacket 1 or 2. For a specific example, consider two wavepackets, 1 and 2. Let their wavefunctions evolve such that they overlap each other at time t. The positional probability distribution associated with the two particles will be a spherical shell distribution with the center being the overlap region; refer to fig.~\ref{2.2} for a schematic diagram. When we detect at a particular position A, the wavepackets of two particles collapse to diametrically opposite points(to conserve momentum) if we are in the center of mass frame of reference). There is no way to know if the particle detected is particle 'a' or particle 'b.' This is a fundamental issue and does not a limitation of the measuring equipment~\cite{ProfessorM}. 
+
+\textbf{Hence, in quantum mechanics, identical particles with overlapping wavefunctions are indistinguishable, and exchanging two identical particles will lead to the same physics.} If the two wavepackets never overlap, they behave like distinguishable particles. 
+This gives rise to the following questions about indistinguishable identical particles:
+\begin{enumerate}
+    \item What is the probability of finding a particle in position A? 
+    \item To calculate the probability, we need to know the final state. However, the final state is ambiguous. Should we consider the probability of wavepacket one or the probability of wavepacket 2, or the joint probability?
+    \item If we consider joint probability, should we take the sum or the sum of the probability amplitudes(along with the sign)?
+\end{enumerate}
+
+\section{Symmetric and anti-symmetric states and observables}
+Consider N non-interacting particles. The state space of the system, $V = V_1 \otimes V_2 \otimes ... \otimes V_N$, where $V_1, V_2... V_N$ are the individual state spaces. Now, consider N non-interacting \textit{identical} particles. In this case, $V_1 = V_2 =...=V_N$. N! permutation operators, $P_{\alpha}$, can act on the state space, V, of the identical particles~\cite{ProfessorM}.  
+
+A state is said to be totally symmetric iff $\forall P_\alpha \in S_N,  P_\alpha\ket{\psi} = \ket{\psi}$. All symmetric states of a state space form a subspace, $V_+$. 
+
+A state is said to be totally anti-symmetric iff $\forall$ even permutations, $P_\beta \in S_N,  P_\beta \ket{\psi} = \ket{\psi} $ and $ \forall$ odd permutations, $P_\gamma \in S_N,  P_\gamma \ket{\psi} = -\ket{\psi} $, i.e, $\forall P_\alpha \in S_N,  P_\alpha\ket{\psi} = \eta_\alpha \ket{\psi}$, where $\eta_\alpha = 1$ if $\alpha$ is even, and $\eta_\alpha = -1$ if $\alpha$ is odd. All anti-symmetric states of a state space form a subspace, $V_-$. 
+
+Consider $S_+$ acting on a state from the state space V, defined as:
+\begin{equation}
+S_+ := \frac{1}{N!} \Sigma_\alpha P_\alpha
+\end{equation} Let's see a few properties of S$_+$:
+\begin{equation}
+    P_\alpha S_+ = S_+ P_\alpha = S_+
+\end{equation}
+\begin{equation}
+    S_+^2 = S_+
+\end{equation} 
+\quad \quad \quad \quad \quad \quad \quad \quad \quad {Let, $\ket{\psi'} = S_+\ket{\psi}$} \\ 
+\begin{equation}
+    P_\alpha \ket{\psi'} = P_\alpha S_+\ket{\psi} = S_+\ket{\psi} = \ket{\psi'}
+\end{equation} 
+\begin{equation}\label{eq1}
+    \ket{\psi'} = S_+\ket{\psi} = (S_+ P_\alpha)\ket{\psi} = S_+ (P_\alpha\ket{\psi}) = \ket{\psi'}
+\end{equation} 
+Equation \ref{eq1} shows that any permutation of ket projects to the same totally symmetric state when operated by $S_+$. $S_+$ is known as the symmetrized. 
+
+Similarly, we can define an antisymmetrizer that projects a ket onto the anti-symmetric ket space. Consider S$_-$ acting on a state from the state space V, defined as:
+\begin{equation}
+S_- := \frac{1}{N!} \Sigma_\alpha \eta_\alpha P_\alpha 
+\end{equation} Let's see a few properties of $S_-$ and observe how it is similar to or different from $S_+$ :
+\begin{equation}
+    P_\alpha S_- = S_- P_\alpha = \eta_\alpha S_-
+\end{equation}
+\begin{equation}
+    S_-^2 = S_-
+\end{equation} 
+\quad \quad \quad \quad \quad \quad \quad \quad \quad {Let, $\ket{\psi'} = S_-\ket{\psi}$} \\ 
+\begin{equation}
+    P_\alpha \ket{\psi'} = P_\alpha S_-\ket{\psi} = \eta_\alpha S_-\ket{\psi} = \eta_\alpha \ket{\psi'}
+\end{equation} 
+\begin{equation}\label{eq2}
+    \ket{\psi'} = S_-\ket{\psi} = (S_- \eta_\alpha P_\alpha)\ket{\psi} = S_- (\eta_\alpha P_\alpha\ket{\psi}) = \ket{\psi'}
+\end{equation} 
+Equation \ref{eq2} shows that any permutation of a ket projects to the same totally anti-symmetric state phase, when operated by $S_-$. $S_-$ is known as the anti-symmetrizer.
+
+Let's study the effect of permutation operators on Hermitian operators. Consider a system of two identical non-interacting particles. Let $A_1$ be a hermitian operator projecting on $V_1$ and let $A_2$ be the corresponding hermitian operator projecting on $V_2$. Let, 
+\begin{align*}
+    \tilde{A_1} \ket{u_i} = a_i\ket{u_i} \\
+    \tilde{A_2} \ket{u_j} = a_j\ket{u_j} \\
+    A_1 = \tilde{A_1} \otimes \mathds{1}_2 \\
+    A_2 = \mathds{1}_1 \otimes \tilde{A_2}
+\end{align*}
+Let $P_{21}$ be the non-identity permutation on V.
+\begin{equation}
+    P_{21} A_1 P_{21}^\dagger \ket{u_i}\ket{u_j} = P_{21} A_1 \ket{u_j}\ket{u_i} = a_j\ket{u_i}\ket{u_j} = A_2\ket{u_i}\ket{u_j} \\
+\end{equation}
+\begin{equation}
+    \Rightarrow P_{21} A_1 P_{21}^\dagger = A_2 \quad
+    and, \quad P_{21} A_2 P_{21}^\dagger = A_1
+\end{equation}
+
+Let $\tilde{A_1}$ and $\tilde{B_2}$ be any two hermitian operators acting on $V_1$ and $V_2$, respectively. Let $C_{12} = A_1 + B_2$ and $D_{12} = A_1B_2$. 
+
+\begin{equation}
+    P_{21} C_{12} P_{21}^\dagger = C_{21}
+\end{equation}
+\begin{equation}
+    P_{21} D_{12} P_{21}^\dagger = D_{21}
+\end{equation}In general for a combination of operators, $O_{12}$,
+\begin{equation}
+    P_{21} O_{12} P_{21}^\dagger = O_{21}
+\end{equation}
+If $O_{12} = O_{21}$, it is a symmetric observable. We can see that symmetric commute with the permutation operator. In fact, for an N particle system,
+\begin{equation}
+    [P_{\alpha}, O_{12...N}] = 0 \quad \Leftrightarrow \quad O_{12...N} \text{ is symmetric}
+\end{equation}
+
+
+\section{Exchange degeneracy}
+Exchange degeneracy is a problem we encounter in quantum mechanics. To solve this problem, another postulate of quantum mechanics is introduced. This is known as the symmetrization postulate. This is described in this section.~\cite{ProfessorM} 
+
+\subsection{Spin-1/2 system}
+Let's understand exchange degeneration with the help of an example of a two identical spin-1/2 particle system. $V = V_1 \otimes V_2$. Consider the spin degree of freedom. We first measure the spin component along the z direction of both the particles and try to calculate the probability of getting a particular state where one particle has up spin, and the other has down spin. And then, we measure the spin component along the x direction and try to find the probability of getting both the particles in the up state. The basis states are: 
+\begin{equation}
+\{\ket{\uparrow}_{Z1} \otimes \ket{\uparrow}_{Z2}, \ket{\uparrow}_{Z1} \otimes \ket{\downarrow}_{Z2}, \ket{\downarrow}_{Z1} \otimes \ket{\uparrow}_{Z2}, \ket{\downarrow}_{Z1} \otimes \ket{\downarrow}_{Z2}\} = \{\ket{\uparrow, \uparrow}_Z, \ket{\uparrow, \downarrow}_Z, \ket{\downarrow, \uparrow}_{Z}, \ket{\downarrow, \downarrow}_{Z}\}    
+\end{equation}
+
+\subsubsection{Measurement of the z-component of spin} 
+The operators are: $S_{1Z} \equiv S_{1Z} \otimes \mathds{1}_2, \quad and \quad S_{2Z} \equiv \mathds{1}_1 \otimes S_{2Z}$. 
+If we get one particle to be in the up state and the other to be in the down state, how do we know if particle one or particle 2 is in the upstate? The possible states that would be consistent with the observation are $\ket{\uparrow, \downarrow}_Z, \ket{\downarrow, \uparrow}_Z$, and in fact, any valid linear combination of these two states: 
+\begin{equation}\label{eq3}
+    \alpha \ket{\uparrow, \downarrow}_Z + \beta \ket{\downarrow, \uparrow}_Z, \quad \text{where} \quad |{\alpha}|^2 +|{\beta}|^2 = 1
+\end{equation} Thus, there are infinite possible states. But are these states equivalent? Do they lead to the same physics? To verify this, we measure the x-component of the spin.
+
+\subsubsection{Measurement of the x-component of spin} 
+The operators are: $S_{1Z} \equiv S_{1Z} \otimes \mathds{1}_2, \quad and \quad S_{2Z} \equiv \mathds{1}_1 \otimes S_{2Z}$. Let's consider the case where both particles are in the up state. The representation of this state can be derived from the single particle representation of the up state: 
+\begin{equation}
+    \ket{\uparrow}_X = (\frac{1}{\sqrt{2}} \ket{\uparrow}_{Z}+\ket{\downarrow}_{Z}))
+\end{equation}
+The state of both particles with up spin in the x-direction can be represented as:
+\begin{align}\label{eq4}
+    \ket{\uparrow, \uparrow}_X = (\frac{1}{\sqrt{2}}(\ket{\uparrow}_{1Z}+\ket{\downarrow}_{1Z})) \otimes (\frac{1}{\sqrt{2}}(\ket{\uparrow}_{2Z}+\ket{\downarrow}_{2Z})) \\= \frac{1}{2}(\ket{\uparrow, \uparrow}_Z + \ket{\uparrow, \downarrow}_Z + \ket{\downarrow, \uparrow}_{Z} + \ket{\downarrow, \downarrow}_{Z}) \notag
+\end{align}
+
+To get the probability of this state after the first two measurements, we project the state obtained from the first measurement, eq.\ref{eq3} on the state obtained from the second measurement, eq.\ref{eq4}. We get this probability to be:
+
+\begin{align}
+    \text{probability} &= |\frac{1}{2}(\bra{\uparrow, \uparrow}_Z + \bra{\uparrow, \downarrow}_Z + \bra{\downarrow, \uparrow}_{Z} + \bra{\downarrow, \downarrow}_{Z})(\alpha \ket{\uparrow, \downarrow}_Z + \beta \ket{\downarrow, \uparrow}_Z)|^2 \\
+     &= |\frac{1}{2}(\alpha+\beta)|^2  
+\end{align}
+This probability depends on $\alpha $ and $ \beta$. Therefore, the different values of $\alpha $ and $ \beta$ in eq.\ref{eq3} do not give us equivalent states; they don't lead to the same physics. How do we choose which is the state that represents the state at the end of measurement 1? This is called exchange degeneracy. 
+
+\subsubsection{Note and summary}
+In this example, exchange degeneracy appears only in the 1st experiment's measurement. This is because we chose the measurement of both particles' x-component of the spin to be the same(up-state). Had we measured different eigenvalues of $S_X$, exchange degeneracy would have also appeared in the state obtained after the 2nd experiment~\cite{N.Sneha}. 
+
+If we measure the same eigenvalues for both identical particles, the probability of this state is known. It can be found experimentally. 
+
+If we measure different eigenvalues for identical particles, the probability of the particular state is unknown since it is unknown. However, the total probability of the state is known, i.e., we know that the likelihood of having one particle in the down state and the other particle in the upstate is $\frac{1}{2}$. This can be found experimentally. 
+
+A complete measurement of each particle doesn't permit the determination of a unique ket of the system's state space. \textbf{A specification of the eigenvalue of a complete set of observables does not completely determine the state
+ket.}
+
+\subsection{N-particle system}
+Consider an N-identical particle system. $V = V_1 \otimes V_2 \otimes ... \otimes V_N$ Let $\ket{\psi} \in V$. Let $V_\psi$ be spanned by the set of permutations of $\ket{\psi}$. $V_\psi$ is a subspace of V. Any state in $V_\psi$ describes the same result after a measurement where $\ket{\psi}$ is an eigenvalue. This leads to exchange degeneracy. 
+
+To solve the issue of exchange degeneracy, we need to introduce a new postulate in Quantum Mechanics, the Symmetrization Postulate.
+
+\section{The Symmetrization postulate}
+The statement: For a system of identical particles, the only kets of its state space that can describe physical states are~\cite{ProfessorM}:
+\begin{enumerate}
+    \item Totally symmetric kets with respect to permutations of identical particles. The particles that obey this are called bosons.
+    \item Totally antisymmetric kets with respect to permutations of identical particles. The particles that obey this are called fermions.
+\end{enumerate}
+
+For N-distinguishable particles, the state space is, $V = V_1 \otimes V_2 \otimes ... \otimes V_N$. However, for identical particles, the state space V is one of two subspaces of $V_1 \otimes V_2 \otimes ... \otimes V_N$: 
+\begin{enumerate}
+    \item $V_+ \Rightarrow$ subspace of/ spanned by totally symmetric kets
+    \item $V_- \Rightarrow$ subspace of/ spanned by totally anti-symmetric kets
+\end{enumerate}
+
+\subsection{Boson or Fermion?}
+How do we know which particle is a boson and which is a fermion? The answer to this is given empirically using the value of spins. Spin is an intrinsic property of elementary particles. The spin of non-elementary particles is given by the sum of the spins of the individual elementary particles, making it up~\cite{N.Sneha}. 
+
+Bosons have integer-valued spin. Examples of elementary particles that are bosons are photons and mesons. Other examples include Helium-4 and Lithium-7. Fermions have half-odd-integer-valued spin. Examples of elementary particles that are bosons are electrons and quarks. Other examples include protons, neutrons, Helium-3, and Lithium-6.
+
+Note: In Quantum Field Theory, using the spin-statistics theorem, this empirical rule relating spin and the fermionic/ bosonic nature of particles is derived. However, the spin-statistics itself is based on a more general hypothesis that is assumed to be true. 
+
+\subsection{Solving exchange degeneracy}
+Let $\ket{\psi} \in V_1 \otimes V_2 \otimes ... \otimes V_N$ and $<\{P_\alpha\ket{\psi}\}> = V_\psi$. If the symmetrization postulate has to remove exchange degeneracy, then there should exist only one ket common between $V_\psi$ and $V_+$ and only one ket common between $V_\psi$ and $V_-$. The proof of this is as follows:
+\begin{align*}
+    &\ket{\psi} \in V_\psi \text{ on symmetrizing we get } S_+\ket{\psi} \\
+    & \text{But wkt } S_+\ket{\psi} \in V_+ \\
+    & P_\alpha\ket{\psi} \in V_\psi \text{ on symmetrizing we get } S_+P_\alpha\ket{\psi} = S_+\ket{\psi} \in V_+ \\
+    & \text{Similarly, } \ket{\psi} \in V_\psi \text{ on anti-symmetrizing we get } S_-\ket{\psi} \\
+    & \text{But wkt } S_-\ket{\psi} \in V_- \\
+    & P_\alpha\ket{\psi} \in V_\psi \text{ on anti-symmetrizing we get } S_-P_\alpha\ket{\psi} = \eta_\alpha S_-\ket{\psi} \in V_-
+\end{align*} 
+
+The ket that describes the physical state for bosons is $S_+\ket{\psi}$ and that for fermions is $S_-\ket{\psi}$
+
+
+\section{Slater determinant}
+Slater determinant is an expression that describes the wave function of a multi-fermionic system, which has the same type of fermions. It helps us write the antisymmetric wave function of this multi-fermionic. Consider a set of $N$ one-electron spin-orbitals $\left\{\phi_{1}, \phi_{2}, \ldots \phi_{N-1}, \phi_{N}\right\}$. Let these functions be orthogonal and normalized, so that $\int \phi_{i}^{*} \phi_{j} d V d s=\delta_{i j}$. Let the 1, 2, .. N represent the observables characterizing the identical particles. A properly antisymmetrized product of these $N$ functions can be written as a Slater determinant:
+\begin{align}
+\Psi(1,2, \ldots, N)&=(N !)^{-1 / 2} \operatorname{det}\left\{\phi_{1} \phi_{2} \ldots \phi_{N-1} \phi_{N}\right\} & \\
+& =\frac{1}{\sqrt{N !}}\left|\begin{array}{ccccc}
+\phi_{1}(1) & \phi_{2}(1) & \cdots & \phi_{N-1}(1) & \phi_{N}(1) \\
+\phi_{1}(2) & \phi_{2}(2) & \cdots & \phi_{N-1}(2) & \phi_{N}(2) \\
+\vdots & \vdots & \ddots & \vdots & \vdots \\
+\phi_{1}(N-1) & \phi_{2}(N-1) & \cdots & \phi_{N-1}(N-1) & \phi_{N}(N-1) \\
+\phi_{1}(N) & \phi_{2}(N) & \cdots & \phi_{N-1}(N) & \phi_{N}(N)
+\end{array}\right|
+\end{align}
+
+Slater determinants are a specific type of Fermionic wavefunction that describes systems of fermions where all electrons have distinct quantum numbers. However, not all fermionic systems can be characterized by a single Slater determinant, especially when electrons have identical quantum numbers. In such cases, the wave function must be expressed as a linear combination of multiple Slater determinants. This means that while Slater determinants are a subset of Fermionic wavefunctions, they cannot fully capture the complexity of all fermionic systems. 
+

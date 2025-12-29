@@ -1,0 +1,159 @@
+\chapter{Bloch theorem}
+\section{Introduction}
+Felix Bloch, a Swiss physicist, published his groundbreaking work titled "Über die Quantenmechanik der Elektronen in Kristallgittern" ("On the Quantum Mechanics of Electrons in Crystal Lattices") in 1929. In this seminal paper, Bloch formulated his theorem, which laid the foundation for understanding the behavior of electrons in periodic structures and their relation to the crystalline lattice potential.
+
+Through his work, Bloch described the electronic states in a periodic potential by introducing what is now known as the Bloch wavefunction, a combination of a plane wave and a periodic function. This wavefunction elegantly captures the behavior of electrons in a crystal and forms the basis for understanding electronic band structures, energy bands, and the emergence of band gaps in materials.
+ Preceding this, is the free electron model, a quantum mechanical model for the behavior of charge carriers in a metallic solid. It was developed in 1927 
+    ,principally by Arnold Sommerfeld, who combined the classical Drude model with quantum mechanical Fermi–Dirac statistics; hence, it is also known as the Drude–Sommerfeld model.
+\section{Free electron model}
+In the free electron model, four main assumptions are taken into account:
+\begin{itemize}
+    \item Free electron approximation: The interaction between the ions and the valence electrons is mostly neglected except in boundary conditions. The ions only keep the charge neutrality in the metal. Unlike in the Drude model, the ions are not necessarily the source of collisions. For example:-
+    The one-dimensional infinite square well of length L is a model for a one-dimensional box with the potential energy:
+    \begin{equation}
+     V(x)={\begin{cases}0,&x_{c}-{\tfrac {L}{2}}<x<x_{c}+{\tfrac {L}{2}},\\\infty ,&{\text{otherwise.}}\end{cases}}   
+    \end{equation}
+    \item Independent electron approximation: The interactions between electrons are ignored. The electrostatic fields in metals are weak because of the screening effect.
+    \item Relaxation-time approximation: There is some unknown scattering mechanism such that the electron probability of collision is inversely proportional to the relaxation time 
+    $\tau$, which represents the average time between collisions. The collisions do not depend on the electronic configuration. This approximation is taken from the Drude model.
+    \item Pauli exclusion principle: Each quantum state of the system can only be occupied by a single electron. This restriction of available electron states is taken into account by Fermi–Dirac statistics (see also Fermi gas). The main predictions of the free-electron model are derived from the Sommerfeld expansion of the Fermi–Dirac occupancy for energies around the Fermi level. For example:-
+    Using the above potential,
+    For N fermions with spin 1⁄2 in the box, no more than two particles can have the same energy, i.e., two particles can have the energy of $E_{1}$, two other particles can have energy, $E_{2}$ and so forth. The particles have the same energy spin up or down, leading to two states for each energy level. In the configuration where the total energy is lowest (the ground state), all the energy levels up to n = N/2 are occupied, and all the higher levels are empty. Defining the reference for the Fermi energy to be $E_{0}$, the Fermi energy is therefore given by:-
+     \begin{equation}
+     E_{\mathrm {F} }^{({\text{1D}})}=E_{n}-E_{0}={\frac {\hbar ^{2}\pi ^{2}}{2mL^{2}}}\left(\left\lfloor {\frac {N}{2}}\right\rfloor \right)^{2},    
+    \end{equation} 
+    where $\left\lfloor\frac{N}{2}\right\rfloor$ is the floor function evaluated at n = N/2.
+ \end{itemize}
+\section{Bloch theorem}
+For electrons in a perfect crystal, there is a basis of wave functions with the following two properties:
+\begin{itemize}
+    \item  each of these wave functions is an energy eigenstate,
+    \item each of these wave functions is a Bloch state, meaning that this wave function $\psi$ can be written in the form
+    \begin{equation}
+    \psi(\mathbf{r})=e^{i \mathbf{k} \cdot \mathbf{r}} u(\mathbf{r})    
+    \end{equation}
+\end{itemize}
+where $u(\mathbf{r})$ has the same periodicity as the atomic structure of the crystal, such that:-
+\begin{equation}
+   u_{\mathbf{k}}(\mathbf{x})=u_{\mathbf{k}}(\mathbf{x}+\mathbf{n} \cdot \mathbf{a}) 
+\end{equation}
+
+The defining property of a crystal is translational symmetry, which means that if the crystal is shifted an appropriate amount, it winds up with all its atoms in the same places. (A finite-size crystal cannot have perfect translational symmetry, but it is a valid approximation.)
+
+A three-dimensional crystal has three primitive lattice vectors $\mathbf{a}_{1}, \mathbf{a}_{2}, \mathbf{a}_{3}$. If the crystal is shifted by any of these three vectors or a combination of them of the form 
+\begin{equation}
+n_{1} \mathbf{a}_{1}+n_{2} \mathbf{a}_{2}+n_{3} \mathbf{a}_{3},    
+\end{equation}
+Where $n_{i}$ are three integers, the atoms end up in the exact locations as they started.
+
+Another helpful ingredient in the proof is the reciprocal lattice vectors. These are three vectors $\mathbf{b}_{1}, \mathbf{b}_{2}, \mathbf{b}_{3}$ (with units of inverse length), with the property that $\mathbf{a}_{i} \cdot \mathbf{b}_{i}=2 \pi$, but $\mathbf{a}_{i} \cdot \mathbf{b}_{j}=0$ when $i \neq j$. (For the formula for $\mathbf{b}_{i}$, see reciprocal lattice vector.)
+
+\subsection{Lemma about translation operators}
+
+Let $\hat{T}_{n_{1}, n_{2}, n_{3}}$ denote a translation operator that shifts every wave function by the amount $n_{1} \mathbf{a}_{1}+n_{2} \mathbf{a}_{2}+n_{3} \mathbf{a}_{3}$ (as above, $n_{j}$ are integers). The following fact is helpful for the proof of Bloch's theorem:
+
+Lemma - If a wave function $\psi$ is an eigenstate of all translation operators (simultaneously), then $\psi$ is a Bloch state.
+
+\section{Proof of Lemma}
+
+Assume we have a wave function $\psi$, an eigenstate of all the translation operators. As a special case of this,
+\begin{equation}
+\psi\left(\mathbf{r}+\mathbf{a}_{j}\right)=C_{j} \psi(\mathbf{r})    
+\end{equation}
+for $j=For,3$, where $C_{j}$ are three numbers (the eigenvalues) that do not depend on $\mathbf{r}$. It is helpful to write the numbers $C_{j}$ in a different form, by choosing three numbers $\theta_{1}, \theta_{2}, \theta_{3}$ with $e^{2 \pi i \theta_{j}}=C_{j}$
+\begin{equation}
+\psi\left(\mathbf{r}+\mathbf{a}_{j}\right)=e^{2 \pi i \theta_{j}} \psi(\mathbf{r})    
+\end{equation}
+Again, the $\theta_{j}$ are three numbers that do not depend on $\mathbf{r}$. Define $\mathbf{k}=\theta_{1} \mathbf{b}_{1}+\theta_{2} \mathbf{b}_{2}+\theta_{3} \mathbf{b}_{3}$, where $\mathbf{b}_{j}$ are the reciprocal lattice vectors (see above). Finally, define
+\begin{equation}
+u(\mathbf{r})=e^{-i \mathbf{k} \cdot \mathbf{r}} \psi(\mathbf{r}) .    
+\end{equation}
+Then
+\begin{eqnarray}
+    u\left(\mathbf{r}+\mathbf{a}_{j}\right) & =e^{-i \mathbf{k} \cdot\left(\mathbf{r}+\mathbf{a}_{j}\right)} \psi\left(\mathbf{r}+\mathbf{a}_{j}\right) \\
+& =\left(e^{-i \mathbf{k} \cdot \mathbf{r}} e^{-i \mathbf{k} \cdot \mathbf{a}_{j}}\right)\left(e^{2 \pi i \theta_{j}} \psi(\mathbf{r})\right) \\
+& =e^{-i \mathbf{k} \cdot \mathbf{r}} e^{-2 \pi i \theta_{j}} e^{2 \pi i \theta_{j}} \psi(\mathbf{r}) \\
+& =u(\mathbf{r}) .
+\end{eqnarray}
+
+
+This proves that $u$ has the periodicity of the lattice. Since $\psi(\mathbf{r})=e^{i \mathbf{k} \cdot \mathbf{r}} u(\mathbf{r})$, that proves that the state is a Bloch state.
+
+Finally, we are ready for the main proof of Bloch's theorem, which follows.
+
+As above, let $\hat{T}_{n_{1}, n_{2}, n_{3}}$ denote a translation operator that shifts every wave function by the amount $n_{1} \mathbf{a}_{1}+n_{2} \mathbf{a}_{2}+n_{3} \mathbf{a}_{3}$, where $n_{i}$ are integers. Because the crystal has translational symmetry, this operator commutes with the Hamiltonian operator. Moreover, every such translation operator commutes with every other. Therefore, there is a simultaneous eigenbasis of the Hamiltonian operator and every possible $\hat{T}_{n_{1}, n_{2}, n_{3}}$ operator. This basis is what we are looking for. The wave functions in this basis are energy eigenstates (because they are eigenstates of the Hamiltonian) and Bloch states (because they are eigenstates of the translation operators; see Lemma above).
+
+\subsection{Using operators}
+We define the translation operator:
+\begin{eqnarray}
+\hat{\mathbf{T}}_{\mathbf{n}} \psi(\mathbf{r}) & =\psi\left(\mathbf{r}+\mathbf{T}_{\mathbf{n}}\right) \\
+& =\psi\left(\mathbf{r}+n_{1} \mathbf{a}_{1}+n_{2} \mathbf{a}_{2}+n_{3} \mathbf{a}_{3}\right) \\
+& =\psi(\mathbf{r}+\mathbf{A n})
+\end{eqnarray}
+with
+\begin{equation}
+\mathbf{A}=\left[\begin{array}{lll}
+\mathbf{a}_{1} & \mathbf{a}_{2} & \mathbf{a}_{3}
+\end{array}\right], \mathbf{n}=\left(\begin{array}{c}
+n_{1} \\
+n_{2} \\
+n_{3}
+\end{array}\right)    
+\end{equation}
+We use the hypothesis of a mean periodic potential.
+\begin{equation}
+U\left(\mathbf{x}+\mathbf{T}_{\mathbf{n}}\right)=U(\mathbf{x})    
+\end{equation}
+and the independent electron approximation with a Hamiltonian:
+\begin{equation}
+\hat{H}=\frac{\hat{\mathbf{p}}^{2}}{2 m}+U(\mathbf{x})    
+\end{equation}
+Given the Hamiltonian is invariant for translations, it shall commute with the translation operator.
+\begin{equation}
+\left[\hat{H}, \hat{\mathbf{T}}_{\mathbf{n}}\right]=0    
+\end{equation}
+and the two operators shall have a common set of eigenfunctions. Therefore we start to look at the eigenfunctions of the translation operator:
+\begin{equation}
+\hat{\mathbf{T}}_{\mathbf{n}} \psi(\mathbf{x})=\lambda_{\mathbf{n}} \psi(\mathbf{x})    
+\end{equation}
+Given $\hat{\mathbf{T}}_{\mathbf{n}}$ is an additive operator:
+\begin{equation}
+\hat{\mathbf{T}}_{\mathbf{n}_{\mathbf{1}}} \hat{\mathbf{T}}_{\mathbf{n}_{\mathbf{2}}} \psi(\mathbf{x})=\psi\left(\mathbf{x}+\mathbf{A} \mathbf{n}_{\mathbf{1}}+\mathbf{A} \mathbf{n}_{\mathbf{2}}\right)=\hat{\mathbf{T}}_{\mathbf{n}_{\mathbf{1}}+\mathbf{n}_{\mathbf{2}}} \psi(\mathbf{x})    
+\end{equation}
+If we substitute here the eigenvalue equation and divide both sides for $\psi(\mathbf{x})$, we have:
+\begin{equation}
+\lambda_{\mathbf{n}_{1}} \lambda_{\mathbf{n}_{2}}=\lambda_{\mathbf{n}_{1}+\mathbf{n}_{2}}    
+\end{equation}
+This is true for
+\begin{equation}
+\lambda_{\mathbf{n}}=e^{s \mathbf{n} \cdot \mathbf{a}},    
+\end{equation}
+where $s \in \mathbb{C}$.
+
+if we use the normalization condition over a single primitive cell of volume $\mathrm{V}$
+\begin{equation}
+1=\int_{V}|\psi(\mathbf{x})|^{2} d \mathbf{x}=\int_{V}\left|\hat{\mathbf{T}}_{\mathbf{n}} \psi(\mathbf{x})\right|^{2} d \mathbf{x}=\left|\lambda_{\mathbf{n}}\right|^{2} \int_{V}|\psi(\mathbf{x})|^{2} d \mathbf{x}    
+\end{equation}
+and therefore
+\begin{equation}
+1=\left|\lambda_{\mathbf{n}}\right|^{2}    
+\end{equation}
+and
+\begin{equation}
+s=i k    
+\end{equation}
+
+where $k \in \mathbb{R}$. Finally:
+\begin{equation}
+ \mathbf {{\hat {T}}_{n}} \psi (\mathbf {x} )=\psi (\mathbf {x} +\mathbf {n} \cdot \mathbf {a} )=e^{ik\mathbf {n} \cdot \mathbf {a} }\psi (\mathbf {x} )   
+\end{equation}
+ 
+ Which is true for a Bloch wave, i.e, for 
+ \begin{equation}
+  \psi _{\mathbf {k} }(\mathbf {x} )=e^{i\mathbf {k} \cdot \mathbf {x} }u_{\mathbf {k} }(\mathbf {x} )    
+ \end{equation}
+ with 
+ \begin{equation}
+  u_{\mathbf {k} }(\mathbf {x} )=u_{\mathbf {k} }(\mathbf {x} +\mathbf {A} \mathbf {n} )    
+ \end{equation}
+
