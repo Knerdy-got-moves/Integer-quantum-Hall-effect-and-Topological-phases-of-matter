@@ -1,4 +1,4 @@
-# IQHE_IAS_SRF
+# Indian Academy of Sciences, Summer project (2023) on Topological phases of matter
 
 This folder contains the source and compiled materials for an IAS-SRF report on the **Integer Quantum Hall Effect (IQHE)** and related topological physics. The main manuscript is built from `main.tex`, which stitches together the chapter `.tex` files listed below.
 
